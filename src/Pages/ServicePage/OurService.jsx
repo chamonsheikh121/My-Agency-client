@@ -236,7 +236,7 @@ const OurService = () => {
             className="min-h-screen flex items-center justify-center"
             aria-label="Our Services"
         >
-            <section className="relative w-full">
+            <section className="relative  w-full">
 
 
 

@@ -40,22 +40,22 @@ const AboutUs = () => {
                             
                             src="https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600"
                             alt="Team Working"
-                            className="absolute object-cover hover:shadow-2xl hover:scale-105 transition-all top-0 right-0 shadow-lg rounded-br-[100px] rounded-tl-[100px] w-40 md:w-60 h-[300px]"
+                            className="absolute object-cover hover:shadow-2xl hover:scale-105 duration-300 transition-all top-0 right-0 shadow-lg rounded-br-[100px] rounded-tl-[100px] w-40 md:w-60 h-[300px]"
                         />
                     </div>
 
                     {/* Bottom Right Image */}
 
-                    <div data-aos="fade-down" className='absolute object-cover hover:shadow-2xl hover:scale-105 transition-all bottom-0 rounded-br-[100px] rounded-tl-[100px] left-0 h-[300px] shadow-lg w-40 md:w-60'>
+                    <div data-aos="fade-down" className='absolute object-cover hover:shadow-2xl hover:scale-105 duration-300 transition-all bottom-0 rounded-br-[100px] rounded-tl-[100px] left-0 h-[300px] shadow-lg w-40 md:w-60'>
                         <img
                             src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=600"
                             alt="Office Environment"
-                            className=" object-cover hover:shadow-2xl hover:scale-105 transition-all rounded-br-[100px] rounded-tl-[100px]  h-full shadow-lg w-full"
+                            className=" object-cover hover:shadow-2xl hover:scale-105 duration-300 transition-all rounded-br-[100px] rounded-tl-[100px]  h-full shadow-lg w-full"
                         />
                     </div>
 
                     {/* Employee Count */}
-                    <div className="absolute hover:shadow-2xl hover:scale-105 transition-all top-4 left-4 text-white bg-purple-600 px-10 py-2 rounded-lg shadow-lg">
+                    <div className="absolute hover:shadow-2xl hover:scale-105 duration-300 transition-all top-4 left-4 text-white bg-purple-600 px-10 py-2 rounded-lg shadow-lg">
                         <span className="text-lg font-bold">100+</span>
                         <p className="text-sm">Employees</p>
                     </div>

@@ -40,7 +40,7 @@ const HomePage = () => {
                 transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             >
                 <Link to='/services'>
-                    <div className="relative bg-purple-900 py-10 mt-20 hover:scale-105 transition-all overflow-hidden shadow-2xl">
+                    <div className="relative bg-purple-900 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
                         {/* Starry Background */}
                         <div className="absolute inset-0 opacity-100 pointer-events-none">
                             {[...Array(100)].map((_, i) => (

@@ -64,7 +64,7 @@ const MainLayout = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center flex-col h-screen bg-white">
-        <span class="loader"></span>
+        <span className="loader"></span>
 
       </div>
     );

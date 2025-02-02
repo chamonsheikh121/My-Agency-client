@@ -79,7 +79,7 @@ const Banner = () => {
                         <img
                             src={bannerImg}
                             alt="Office Environment"
-                            className="w-full h-[600px] hover:scale-105 transition-all shadow-2xl object-cover rounded-tl-[80px] rounded-br-[80px]"
+                            className="w-full h-[600px] duration-500 hover:scale-105 transition-all shadow-2xl object-cover rounded-tl-[80px] rounded-br-[80px]"
                         />
                         <div className="absolute bottom-0 left-0">
                             <TextAnimation textColor={'white'} />

@@ -1,9 +1,11 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // To get the dynamic id from the URL
 import { motion } from 'framer-motion';
 import FAQSection from './Components/FAQSection ';
 import OurWorkProcess from './Components/OurWorkProcess ';
 import HireMessageSection from '../HomePage/Components/HireMessageSection';
+import 'aos/dist/aos.css'; // import AOS styles
+import AOS from 'aos'; // import AOS library
 
 const services = [
     {
@@ -230,108 +232,84 @@ const ServiceDetailsPage = () => {
         return <div>Service not found</div>;
     }
 
+    useEffect(() => {
+            window.scrollTo(0, 0); // Scroll to the top
+        }, []);
+
+
+useEffect(() => {
+
+        AOS.init({
+            duration: 2000,
+            easing: 'ease',
+            once: false,
+            
+        });
+
+
+        AOS.refresh();
+
+    }, []);
+
     return (
         <motion.section
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="py-20"
+        initial={{ opacity: 0, scale: 0.9 }} // Start small and invisible
+        animate={{ opacity: 1, scale: 1 }}  // Grow and appear
+        transition={{ duration: 1, ease: "easeOut" }} // Smooth effect
+        className=""
+        aria-label="Our Services details "
         >
-           
-            <div className="max-w-7xl mx-auto rounded-lg overflow-hidden">
+            <div className="max-w-7xl mx-auto mt-10 rounded-lg overflow-hidden">
                 {/* Header Section */}
-                <div>
+                <div className='w-full h-[600px] '>
                     <img
                         src={service.img}
                         alt={service.title}
-                        className="w-full h-96 object-cover"
+                        className="w-full h-full object-contain"
                     />
-
                 </div>
 
                 {/* Service Options Section */}
-                <div className="p-6">
-                    <h3 className="text-2xl font-semibold text-purple-700 mb-4">Service Details</h3>
-                    <div className="space-y-8">
-                        {/* Conditional Rendering for Different Service Options */}
-                        {service.options.languages && (
-                            <div>
-                                <h4 className="text-xl font-semibold text-purple-600">Languages:</h4>
-                                <ul className="list-disc pl-6">
-                                    {service.options.languages.map((language, index) => (
-                                        <li key={index} className="text-gray-700">{language}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {service.options.frameworks && (
-                            <div>
-                                <h4 className="text-xl font-semibold text-purple-600">Frameworks:</h4>
-                                <ul className="list-disc pl-6">
-                                    {service.options.frameworks.map((framework, index) => (
-                                        <li key={index} className="text-gray-700">{framework}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-
-
-                        {service.options.tools && (
-                            <div>
-                                <h4 className="text-xl font-semibold text-purple-600">Design Tools:</h4>
-                                <ul className="list-disc pl-6">
-                                    {service.options.tools.map((tool, index) => (
-                                        <li key={index} className="text-gray-700">{tool}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {service.options.integrations && (
-                            <div>
-                                <h4 className="text-xl font-semibold text-purple-600">Integrations:</h4>
-                                <div className="list-disc pl-6">
-                                    {service.options.integrations.map((integration, index) => (
-                                        <div key={index} className="text-gray-700">
-                                            <strong>{integration.title}:</strong> {integration.description}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-
-                    {service.options.features && (
+                <div className="">
+               {service.options.features && (
                         <div>
-                            <h4 className="text-xl font-semibold text-purple-600">Features:</h4>
-                            <div className="list-disc mt-4 space-y-10">
+                            <h4 className="text-3xl font-semibold text-purple-600">Features:</h4>
+                            <div className="mt-4 p-10 space-y-10">
                                 {service.options.features.map((feature, index) => (
-                                    <div key={index} className="bg-white bg-opacity-20 backdrop-blur-md p-10 rounded-lg shadow-lg space-y-4">
-                                        <h5 className="text-xl font-semibold text-purple-700">{feature?.title}</h5>
-                                        <p className="text-gray-700">{feature?.description}</p>
+                                    <div
+                                        key={index}
+                                         data-aos="fade-up"
+                                        className="relative group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                                    >
+                                        {/* Blurred Background Layer */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-purple-200 via-purple-50 to-purple-200 opacity-30 group-hover:opacity-40 transition-all backdrop-blur-md"></div>
+
+                                        {/* Content */}
+                                        <div className="relative p-10 space-y-4 bg-white/40 bg-opacity-50 rounded-lg">
+                                            <h5 className="text-xl font-semibold text-purple-700 group-hover:text-purple-900 transition-all">
+                                                {feature?.title}
+                                            </h5>
+                                            <p className="text-gray-700 group-hover:text-gray-900 transition-all">
+                                                {feature?.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
-
                         </div>
+
                     )}
                 </div>
 
-                {/* Contact Button */}
-                <div className="p-6">
-                    <button className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all">
-                        Contact Us
-                    </button>
-                </div>
+              
+               
             </div>
 
-            {/* Additional Sections */}
+          
             <OurWorkProcess />
             <FAQSection />
 
-            <HireMessageSection/>
+            <HireMessageSection />
         </motion.section>
     );
 };
