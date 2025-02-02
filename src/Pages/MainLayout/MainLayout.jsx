@@ -1,47 +1,83 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../HomePage/Components/Footer";
 import { useEffect, useState } from "react";
-import Lenis from "@studio-freight/lenis"; // Import Lenis.js
+import Lenis from "@studio-freight/lenis";
+import './../../index.css'
 
 const MainLayout = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(false);
 
-  // Listen for scroll events
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/who-we-are", label: "Who we are" },
+    { path: "/projects", label: "Projects" },
+    { path: "/services", label: "Services" },
+  ];
+
   useEffect(() => {
-    // Initialize Lenis.js for smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2, // Adjust scrolling duration
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Custom easing function for smoothness
-      smoothWheel: true, // Enable smooth scrolling for wheel events
-      smoothTouch: true, // Enable smooth scrolling for touch events
+      duration: 1.2,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+      smoothTouch: true,
     });
 
-    // Animation frame to keep Lenis running
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
     requestAnimationFrame(raf);
 
-    // Cleanup Lenis on component unmount
     return () => lenis.destroy();
   }, []);
 
   const handleScroll = () => {
-    if (window.scrollY > 20) {
-      setIsSticky(true); // Set sticky if scrolled more than 20px
-    } else {
-      setIsSticky(false); // Reset sticky if scrolled back up
-    }
+    setIsSticky(window.scrollY > 20);
   };
 
-  // Add scroll event listener
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle loading and welcome message
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem("visited");
+
+    setTimeout(() => {
+      if (!hasVisited) {
+        setShowWelcome(true);
+        sessionStorage.setItem("visited", "true");
+        setTimeout(() => {
+          setShowWelcome(false);
+          setLoading(false);
+        }, 2000); // Show welcome message for 2 seconds
+      } else {
+        setLoading(false);
+      }
+    }, 1500); // Initial loading time
+  }, []);
+
+  // Show loading screen
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center flex-col h-screen bg-white">
+        <span class="loader"></span>
+
+      </div>
+    );
+  }
+
+  // Show welcome screen (only for first-time session)
+  if (showWelcome) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-purple-200">
+        <p className="text-3xl font-bold text-gray-800">Welcome!</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -56,11 +92,8 @@ const MainLayout = () => {
                 : "top-[-80px] bg-transparent"
             }`}
           >
-            {/* Inner container for max width */}
             <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 transition-all duration-500">
-              {/* Left side - Mobile Drawer & Nav Items */}
               <div className="flex-none lg:flex lg:w-1/3">
-                {/* Mobile Menu Button */}
                 <label
                   htmlFor="my-drawer-3"
                   aria-label="open sidebar"
@@ -80,29 +113,21 @@ const MainLayout = () => {
                     ></path>
                   </svg>
                 </label>
-
-                {/* Desktop Nav Items */}
-                <ul className="hidden lg:flex menu menu-horizontal text-lg font-medium transition-all duration-500">
-                  <li>
-                    <a className="hover:text-blue-500 transition-all">Home</a>
-                  </li>
-                  <li>
-                    <a className="hover:text-blue-500 transition-all">About</a>
-                  </li>
-                  <li>
-                    <a className="hover:text-blue-500 transition-all">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a className="hover:text-blue-500 transition-all">
-                      Contact
-                    </a>
-                  </li>
+                <ul className="hidden lg:flex menu uppercase menu-horizontal text-lg font-medium transition-all duration-500">
+                  {navLinks.map(({ path, label }) => (
+                    <NavLink
+                      key={path}
+                      to={path}
+                      className={({ isActive }) =>
+                        `relative p-2 text-nowrap text-sm text-gray-700 transition-all
+                        ${isActive ? "text-purple-800 after:w-full" : "hover:text-gray-900"}`
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  ))}
                 </ul>
               </div>
-
-              {/* Center - Logo */}
               <div className="flex-1 flex justify-center">
                 <div className="text-3xl md:text-4xl font-extrabold text-gray-900 flex items-center transition-all duration-500">
                   <span className="text-blue-600">Team</span>
@@ -111,30 +136,21 @@ const MainLayout = () => {
                   </span>
                 </div>
               </div>
-
-              {/* Right side - Empty for alignment */}
               <div className="w-1/3 hidden lg:block"></div>
             </div>
           </div>
 
-          {/* Page content here */}
+          {/* Page content */}
           <Outlet />
           <Footer />
         </div>
+
+        {/* Sidebar Drawer */}
         <div className="drawer-side z-50">
-          <label
-            htmlFor="my-drawer-3"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
+          <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
           <ul className="menu bg-base-200 min-h-full w-80 p-4">
-            {/* Sidebar content here */}
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
+            <li><a>Sidebar Item 1</a></li>
+            <li><a>Sidebar Item 2</a></li>
           </ul>
         </div>
       </div>

@@ -22,7 +22,7 @@ const TextAnimation = ({textColor}) => {
     return (
         <div  className="flex  hover:scale-125 transition-all items-center justify-center ">
           {/* Container */}
-          <div data-aos="zoom-in" className="relative  w-40 h-40 flex items-center justify-center">
+          <div data-aos="zoom-in" className="relative  w-48 h-48 flex items-center justify-center">
             {/* Centered TW Text */}
             <div className=" text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">TW</div>
     

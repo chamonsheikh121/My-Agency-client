@@ -19,7 +19,7 @@ const HireMessageSection = () => {
         <p className="text-lg mb-6 text-gray-600">
           Just take a step ahead and Hire now or get a free quote to discuss how we can help you.
         </p>
-        <button className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100  font-semibold px-14 py-3 rounded-full hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
+        <button className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100  font-semibold px-14 py-3 rounded-md hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
           Hire now
         </button>
       </div>

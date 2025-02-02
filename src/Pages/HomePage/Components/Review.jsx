@@ -105,11 +105,11 @@ const Review = () => {
         >
             <div className="h-full w-full bg-black pt-32 bg-opacity-40">
                 <div className="max-w-xl ">
-                    <div className="bg-black/60 backdrop-blur-sm p-4 rounded-lg inline-block text-center">
-                        <h2 className="text-5xl font-extrabold text-purple-500">
-                            <span className="text-purple-100">What Our</span> Clients Say
+                    <div className="bg-white/60 backdrop-blur-sm p-4  inline-block text-center">
+                        <h2 className="text-5xl font-extrabold text-purple-700">
+                            <span className="text-gray-600">What Our</span> Clients Say
                         </h2>
-                        <hr className="w-1/4 border-b-2 border-purple-100 mt-2" />
+                        <hr className="w-1/4 border-b-2 border-purple-500 mt-2" />
                     </div>
                 </div>
             </div>

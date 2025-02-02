@@ -56,7 +56,7 @@ const FAQSection = () => {
       <div className="relative max-w-5xl mx-auto">
       
       <h2 data-aos="fade-up"  className="text-4xl font-bold text-center text-white mb-20">
-          Frequently Asked Questions
+          Frequently <span className="text-purple-400">Asked Questions</span>
         </h2>
 
         <div className="space-y-6">
