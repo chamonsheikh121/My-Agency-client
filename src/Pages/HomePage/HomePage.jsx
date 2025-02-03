@@ -39,7 +39,9 @@ const HomePage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             >
-                <Link to='/services'>
+                <Link to='/services'
+                onClick={() => window.location.href = '/services'}
+                >
                     <div className="relative bg-purple-900 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
                         {/* Starry Background */}
                         <div className="absolute inset-0 opacity-100 pointer-events-none">
@@ -69,7 +71,7 @@ const HomePage = () => {
                         {/* Marquee Content */}
                         <Marquee speed={150}>
                             {services.map((item, i) => (
-                                <div className="mx-20 p-6 space-y-4 bg-white/10 backdrop-blur-lg shadow-lg duration-300 ease-in-out flex items-start flex-col justify-center">
+                                <div key={i} className="mx-20 p-6 space-y-4 bg-white/10 backdrop-blur-lg shadow-lg duration-300 ease-in-out flex items-start flex-col justify-center">
                                     <h1 className="text-2xl font-semibold text-gray-100">{item.title}</h1>
                                 </div>
                             ))}

@@ -5,78 +5,135 @@
 
 
 
-
-@keyframes animate-shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-    20%, 40%, 60%, 80% { transform: translateX(5px); }
-  }
-  
-  /* JavaScript to Restart the Animation */
-  .animate-shake{
-    animation: repeatShake 0.3s ease-in-out;
-    animation-delay: 5s; /* Next shake happens after 5s */
-    animation-iteration-count: 1; /* Only shakes once */
-  }
-
-  .loader {
-    width: 0;
-    height: 4.8px;
-    display: inline-block;
-    position: relative;
-    background: purple;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    box-sizing: border-box;
-    animation: animFw 2s linear infinite;
-  }
-    .loader::after,
-    .loader::before {
-      content: '';
-      width: 10px;
-      height: 1px;
-      background: purple;
-      position: absolute;
-      top: 9px;
-      right: -2px;
-      opacity: 0;
-      transform: rotate(-45deg) translateX(0px);
-      box-sizing: border-box;
-      animation: coli1 0.3s linear infinite;
+@layer utilities {
+  @keyframes vibrate {
+    0% {
+      transform: translate(0);
     }
-    .loader::before {
-      top: -4px;
-      transform: rotate(45deg);
-      animation: coli2 0.3s linear infinite;
+
+    20% {
+      transform: translate(-1px, 1px);
     }
-  
-  @keyframes animFw {
-      0% {
+
+    40% {
+      transform: translate(1px, -1px);
+    }
+
+    60% {
+      transform: translate(-1px, -1px);
+    }
+
+    80% {
+      transform: translate(1px, 1px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .vibrate:hover {
+    animation: vibrate 0.2s ease-in-out infinite;
+  }
+}
+
+
+
+.vibrateHire {
+  animation: vibrateHire 0.2s ease-in-out infinite 0s, normalState 3s ease-in-out;
+}
+
+@keyframes normalState {
+  0% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes vibrateHire {
+  0% {
+    transform: rotate(-3deg);
+  }
+  20% {
+    transform: rotate(3deg);
+  }
+  40% {
+    transform: rotate(-3deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+.loader {
+  width: 0;
+  height: 4.8px;
+  display: inline-block;
+  position: relative;
+  background: purple;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: animFw 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  background: purple;
+  position: absolute;
+  top: 9px;
+  right: -2px;
+  opacity: 0;
+  transform: rotate(-45deg) translateX(0px);
+  box-sizing: border-box;
+  animation: coli1 0.3s linear infinite;
+}
+
+.loader::before {
+  top: -4px;
+  transform: rotate(45deg);
+  animation: coli2 0.3s linear infinite;
+}
+
+@keyframes animFw {
+  0% {
     width: 0;
   }
-      100% {
+
+  100% {
     width: 100%;
   }
-    }
-  
-  @keyframes coli1 {
-      0% {
+}
+
+@keyframes coli1 {
+  0% {
     transform: rotate(-45deg) translateX(0px);
     opacity: 0.7;
   }
-      100% {
+
+  100% {
     transform: rotate(-45deg) translateX(-45px);
     opacity: 0;
   }
-    }
-  
-  @keyframes coli2 {
-      0% {
+}
+
+@keyframes coli2 {
+  0% {
     transform: rotate(45deg) translateX(0px);
     opacity: 1;
   }
-      100% {
+
+  100% {
     transform: rotate(45deg) translateX(-45px);
     opacity: 0.7;
   }
-    }
-    
+}

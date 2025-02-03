@@ -233,17 +233,17 @@ const ServiceDetailsPage = () => {
     }
 
     useEffect(() => {
-            window.scrollTo(0, 0); // Scroll to the top
-        }, []);
+        window.scrollTo(0, 0); // Scroll to the top
+    }, []);
 
 
-useEffect(() => {
+    useEffect(() => {
 
         AOS.init({
             duration: 2000,
             easing: 'ease',
             once: false,
-            
+
         });
 
 
@@ -253,15 +253,15 @@ useEffect(() => {
 
     return (
         <motion.section
-        initial={{ opacity: 0, scale: 0.9 }} // Start small and invisible
-        animate={{ opacity: 1, scale: 1 }}  // Grow and appear
-        transition={{ duration: 1, ease: "easeOut" }} // Smooth effect
-        className=""
-        aria-label="Our Services details "
+            initial={{ opacity: 0, scale: 0.9 }} // Start small and invisible
+            animate={{ opacity: 1, scale: 1 }}  // Grow and appear
+            transition={{ duration: 1, ease: "easeOut" }} // Smooth effect
+            className="z"
+            aria-label="Our Services details "
         >
             <div className="max-w-7xl mx-auto mt-10 rounded-lg overflow-hidden">
                 {/* Header Section */}
-                <div className='w-full h-[600px] '>
+                <div className='w-full h-[600px] z'>
                     <img
                         src={service.img}
                         alt={service.title}
@@ -271,27 +271,29 @@ useEffect(() => {
 
                 {/* Service Options Section */}
                 <div className="">
-               {service.options.features && (
+                    {service.options.features && (
                         <div>
                             <h4 className="text-3xl font-semibold text-purple-600">Features:</h4>
                             <div className="mt-4 p-10 space-y-10">
                                 {service.options.features.map((feature, index) => (
-                                    <div
-                                        key={index}
-                                         data-aos="fade-up"
-                                        className="relative group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                                    >
-                                        {/* Blurred Background Layer */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-purple-200 via-purple-50 to-purple-200 opacity-30 group-hover:opacity-40 transition-all backdrop-blur-md"></div>
+                                    <div key={index} className='rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl bg-transparent'>
+                                        <div
+                                            
+                                            data-aos="fade-up"
+                                            className="relative group overflow-hidden "
+                                        >
+                                            {/* Blurred Background Layer */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-purple-700 via-purple-400 to-purple-700 rounded-md opacity-50 group-hover:opacity-40 transition-all backdrop-blur-md"></div>
 
-                                        {/* Content */}
-                                        <div className="relative p-10 space-y-4 bg-white/40 bg-opacity-50 rounded-lg">
-                                            <h5 className="text-xl font-semibold text-purple-700 group-hover:text-purple-900 transition-all">
-                                                {feature?.title}
-                                            </h5>
-                                            <p className="text-gray-700 group-hover:text-gray-900 transition-all">
-                                                {feature?.description}
-                                            </p>
+                                            {/* Content */}
+                                            <div className="relative p-10 space-y-4 bg-white/40 bg-opacity-50 rounded-lg">
+                                                <h5 className="text-xl font-semibold text-purple-700 group-hover:text-purple-900 transition-all">
+                                                    {feature?.title}
+                                                </h5>
+                                                <p className="text-gray-700 group-hover:text-gray-900 transition-all">
+                                                    {feature?.description}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
@@ -301,11 +303,11 @@ useEffect(() => {
                     )}
                 </div>
 
-              
-               
+
+
             </div>
 
-          
+
             <OurWorkProcess />
             <FAQSection />
 

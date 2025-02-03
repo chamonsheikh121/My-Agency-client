@@ -1,13 +1,37 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ServiceCard from "./Components/ServiceCard";
 import { motion } from 'framer-motion';
 import HireMessageSection from '../HomePage/Components/HireMessageSection';
 
 
 const OurService = () => {
-    // Scroll to top when the component is mounted
+
+
+
+    const [visibleCard, setVisibleCard] = useState(null);
+
+
     useEffect(() => {
+
         window.scrollTo(0, 0); // Scroll to the top
+
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visibleEntry = entries.find(entry => entry.isIntersecting);
+                if (visibleEntry) {
+                    setVisibleCard(visibleEntry.target.dataset.id);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        const cards = document.querySelectorAll(".service-card");
+        cards.forEach(card => observer.observe(card));
+
+        return () => {
+            cards.forEach(card => observer.unobserve(card));
+        };
     }, []);
 
     const services = [
@@ -276,27 +300,42 @@ const OurService = () => {
                             </div>
                         </div>
 
-                        {/* Call to Action */}
-                        <div className="mt-10">
-                            <a href="#" className="px-6 py-3 text-lg font-semibold bg-purple-600 hover:bg-purple-700 transition-all rounded-lg shadow-lg">
-                                Hire now
-                            </a>
-                        </div>
+
                     </section>
 
-                    {/* Services List */}
-                    {services.map((service, index) => (
-                        <ServiceCard
-                            key={index}
-                            id={service?.id}
-                            title={service.title}
-                            description={service.description}
-                            img={service.img}
-                            isReversed={index % 2 !== 0}
-                        />
-                    ))}
+
+
+
+
+
+                    <div className='max-w-6xl mx-auto'>
+                        <div data-aos="fade-up" className="text-center my-10 py-10">
+                            <h1 className="text-5xl font-bold text-gray-900">
+                                Our <span className="text-purple-700">Services</span>
+                            </h1>
+                            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                                We provide world-class web development services, delivering cutting-edge solutions for businesses and individuals.
+                                From custom website development to performance optimization, we build scalable, secure, and high-performing web applications
+                                that drive success in the digital world. Let's turn your ideas into reality! 🌍🚀
+                            </p>
+                        </div>
+
+                        {/* Services List */}
+                        {services.map((service, index) => (
+                            <ServiceCard
+                                key={index}
+                                id={service?.id}
+                                title={service.title}
+                                description={service.description}
+                                img={service.img}
+                                isReversed={index % 2 !== 0}
+                                visibleCard={visibleCard} // Pass visibleCard as a prop
+                            />
+                        ))}
+                    </div>
+
                 </div>
-         
+
                 <HireMessageSection />
             </section>
         </motion.section>

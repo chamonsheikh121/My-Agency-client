@@ -130,6 +130,7 @@ const Portfolio = () => {
                                             <Link
                                                 to={`/projects`} // Dynamic Link
                                                 className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg"
+                                                onClick={() => window.location.href = '/projects'}
                                             >
                                                 <FaEye className="text-xl" />
                                                 View all

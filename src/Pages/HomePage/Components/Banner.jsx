@@ -8,14 +8,21 @@ const Banner = () => {
 
     const [shake, setShake] = useState(false);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setShake(true);
-            setTimeout(() => setShake(false), 300); // Shake for 300ms, then stop
-        }, 2000); // Every 5 seconds
+  useEffect(() => {
+    const toggleShake = () => {
+      setShake(true);
 
-        return () => clearInterval(interval);
-    }, []);
+      setTimeout(() => {
+        setShake(false);
+      }, 2000); // Shake for 2 seconds
+    };
+
+    toggleShake(); // Start the first shake
+
+    const interval = setInterval(toggleShake, 5000); // Repeat every 5 seconds (3s off + 2s on)
+
+    return () => clearInterval(interval);
+  }, []);
 
 
 
@@ -47,11 +54,11 @@ const Banner = () => {
                     </div>
 
                     <button
-                        className={`bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
-      ${shake ? "animate-shake" : ""}`}
-                    >
-                        🚀 Hire Now
-                    </button>
+      className={`bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
+        ${shake ? "vibrateHire" : ""}`}
+    >
+      🚀 Hire Now
+    </button>
 
                     {/* Reviews Section */}
                     <div className="flex items-center space-x-4 pt-6">
@@ -70,10 +77,10 @@ const Banner = () => {
                 {/* Right Image */}
 
                 <motion.div
-                   initial={{ opacity: 0, y: -300 }}  // Start above the screen
-                   animate={{ opacity: 1, y: 0 }}     // End at its normal position
-                   transition={{ duration: 1, ease: 'easeOut' }}
-                   className="w-3/4 mx-auto"
+                    initial={{ opacity: 0, y: -300 }}  // Start above the screen
+                    animate={{ opacity: 1, y: 0 }}     // End at its normal position
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                    className="w-3/4 mx-auto"
                 >
                     <div className="w-full flex justify-end relative mt-8 md:mt-0 before:absolute before:top-[-20px] before:right-[-16px] before:border-t-4 before:border-r-4 before:border-purple-600 before:w-32 before:h-32 before:rounded-tr-lg after:absolute after:bottom-[-20px] after:left-[-18px] after:border-b-4 after:border-l-4 after:border-purple-600 after:w-32 after:h-32 after:rounded-bl-lg">
                         <img

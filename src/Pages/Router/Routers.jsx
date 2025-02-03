@@ -6,6 +6,7 @@ import OurService from '../ServicePage/OurService';
 import ServiceDetailsPage from '../ServiceDetailsPage/ServiceDetailsPage';
 import ProjectsPage from '../ProjectsPage/ProjectsPage';
 import ProjectDetailsPage from '../ProjectsPage/Components/ProjectDetailsPage';
+import WhoWeAre from '../WhoWeAre/WhoWeAre';
 
 const routers = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const routers = createBrowserRouter([
             {
                path:'services',
                 element: <OurService/>
+            },
+            {
+               path:'who_we_are',
+                element: <WhoWeAre/>
             },
             {
                path:'projects',

@@ -45,7 +45,7 @@ const FAQSection = () => {
 
                 <div className="flex justify-center items-center gap-20">
                   
-                        <img className=" drop-shadow-2xl" src={faq} alt="" />
+                        <img className="drop-shadow-[0_10px_10px_rgba(128,128,128,0.8)]" src={faq} alt="" />
                    
                     <div className="space-y-6 w-full">
                         {faqData.map((faq, index) => (

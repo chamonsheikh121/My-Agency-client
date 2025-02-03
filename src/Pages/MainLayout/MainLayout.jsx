@@ -11,7 +11,7 @@ const MainLayout = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/who-we-are", label: "Who we are" },
+    { path: "/who_we_are", label: "Who we are" },
     { path: "/projects", label: "Projects" },
     { path: "/services", label: "Services" },
   ];
@@ -57,7 +57,7 @@ const MainLayout = () => {
       } else {
         setLoading(false);
       }
-    }, 1500); // Initial loading time
+    }, 1000); // Initial loading time
   }, []);
 
   // Show loading screen
@@ -122,6 +122,7 @@ const MainLayout = () => {
                         `relative p-2 text-nowrap text-sm text-gray-700 transition-all
                         ${isActive ? "text-purple-800 after:w-full" : "hover:text-gray-900"}`
                       }
+                      onClick={() => window.location.href = path}
                     >
                       {label}
                     </NavLink>
