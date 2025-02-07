@@ -52,8 +52,8 @@ const AgencyMemberCard = ({img, name,position}) => {
                 />
 
             </motion.div>
-            <h2 className="mt-4 text-xl font-bold text-purple-700">{name}</h2>
-            <p className="text-gray-600 text-sm">{position}</p>
+            <h2 className="mt-4 text-2xl font-bold text-purple-700">{name}</h2>
+            <p className="text-gray-600  text-[16px] font-bold">{position}</p>
         </div>
     );
 };

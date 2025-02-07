@@ -11,6 +11,7 @@ import FAQSection from "./Components/FAQSection";
 import HireMessageSection from "./Components/HireMessageSection";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
 
 const HomePage = () => {
     const services = [
@@ -32,15 +33,21 @@ const HomePage = () => {
             >
                 <Banner />
             </motion.div>
-            
+
+            <Helmet>
+                <title>Team Webio | HOME</title>
+            </Helmet>
+
             {/* Starry Marquee Section with Animation */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             >
-                <Link to='/services'
-                onClick={() => window.location.href = '/services'}
+                <Link
+
+                    onClick={() => window.location.href = '/services'}
+                    to='/services'
                 >
                     <div className="relative bg-purple-900 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
                         {/* Starry Background */}
@@ -71,14 +78,44 @@ const HomePage = () => {
                         {/* Marquee Content */}
                         <Marquee speed={150}>
                             {services.map((item, i) => (
-                                <div key={i} className="mx-20 p-6 space-y-4 bg-white/10 backdrop-blur-lg shadow-lg duration-300 ease-in-out flex items-start flex-col justify-center">
-                                    <h1 className="text-2xl font-semibold text-gray-100">{item.title}</h1>
+                                <div key={i} className=" p-4 0 ease-in-out flex  items-center justify-center ">
+                                    <h1 className="text-2xl px-20 py-6 mr-14 bg-white/10 backdrop-blur-lg shadow-lg duration-30 font-semibold text-gray-100">{item.title}</h1>
+                                    <div className="flex justify-center items-center">
+                                        <motion.div
+                                            animate={{ rotate: 360 }}
+                                            transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+                                            className="relative w-16 h-16"
+                                        >
+                                            {/* Glowing Outer Layer */}
+                                            <div className="absolute inset-0 rounded-full bg-blue-400 blur-2xl opacity-30"></div>
+
+                                            {/* Galaxy Star SVG */}
+                                            <svg
+                                                viewBox="0 0 100 100"
+                                                className="w-full h-full fill-[url(#starGradient)] drop-shadow-lg"
+                                            >
+                                                <defs>
+                                                    <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
+                                                        <stop offset="0%" stopColor="#d200e9" />
+                                                        <stop offset="100%" stopColor="#ffffff" />
+                                                    </radialGradient>
+                                                </defs>
+                                                <path d="M50 10 L61 38 L90 40 L66 60 L72 90 L50 75 L28 90 L34 60 L10 40 L39 38 Z" />
+                                            </svg>
+                                        </motion.div>
+                                    </div>
                                 </div>
                             ))}
                         </Marquee>
                     </div>
                 </Link>
+
             </motion.div>
+
+
+
+
+
 
             {/* About Us Section with Animation */}
             <motion.div
@@ -118,9 +155,12 @@ const HomePage = () => {
                 transition={{ duration: 1, delay: 0.7, ease: 'easeOut' }}
             >
                 <Portfolio />
+
+            </motion.div>
+            <div className='pt-32'>
                 <Review />
                 <HireMessageSection />
-            </motion.div>
+            </div>
         </div>
     );
 };

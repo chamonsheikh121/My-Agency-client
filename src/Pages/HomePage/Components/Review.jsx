@@ -100,21 +100,26 @@ const Review = () => {
 
     return (
         <div
-            className="h-screen relative bg-cover bg-center flex items-center justify-center"
-            style={{ backgroundImage: `url(${bgImage})` }}
+            className="h-screen  relative bg-cover bg-center flex items-center justify-center"
+            style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundAttachment: "fixed",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
         >
-            <div className="h-full w-full bg-black pt-32 bg-opacity-40">
+            <div className="h-full w-full bg-black py-32 bg-opacity-40">
                 <div className="max-w-xl ">
-                    <div className="bg-white/60 backdrop-blur-sm p-4  inline-block text-center">
-                        <h2 className="text-5xl font-extrabold text-purple-700">
-                            <span className="text-gray-600">What Our</span> Clients Say
+                    <div className="bg-purple-700 text-white rounded-md shadow-2xl shadow-purple-400 backdrop-blur-sm p-4  inline-block text-center">
+                        <h2 className="text-5xl  font-extrabold ">
+                            <span className="">What Our</span> Clients Say
                         </h2>
-                        <hr className="w-1/4 border-b-2 border-purple-500 mt-2" />
+                        <hr className="w-1/4 border-b-2 border-white  mt-2" />
                     </div>
                 </div>
             </div>
             <div className="absolute bottom-0 w-full ">
-                <div data-aos="zoom-in-down" className="max-w-5xl mx-auto  mr-10 mb-10 z-30 rounded-xl p-8 ">
+                <div data-aos="zoom-in-down" className="max-w-5xl mx-auto  md:mr-10 mb-10 z-30 rounded-xl p-8 ">
 
                     <Swiper
                         spaceBetween={0}
@@ -129,7 +134,7 @@ const Review = () => {
                     >
                         {reviews.map((review) => (
                             <SwiperSlide key={review.id}>
-                                <div className="bg-gradient-to-tr from-black to-purple-500 p-6 rounded-xl shadow-md shadow-purple-700 m-4 text-center   h-[350px] flex flex-col justify-center gap-4 transform transition-transform hover:scale-105">
+                                <div className="bg-gradient-to-tr from-purple-400 to-purple-800 p-6 rounded-xl shadow-md shadow-purple-700 m-4 text-center   h-[350px] flex flex-col justify-center gap-4 transform transition-transform hover:scale-105">
                                     <div className="flex justify-center">
                                         <img
                                             src={review.image}

@@ -12,19 +12,19 @@
     }
 
     20% {
-      transform: translate(-1px, 1px);
+      transform: translate(-5px, 5px);
     }
 
     40% {
-      transform: translate(1px, -1px);
+      transform: translate(5px, -5px);
     }
 
     60% {
-      transform: translate(-1px, -1px);
+      transform: translate(-5px, -5px);
     }
 
     80% {
-      transform: translate(1px, 1px);
+      transform: translate(5px, 5px);
     }
 
     100% {
@@ -33,7 +33,7 @@
   }
 
   .vibrate:hover {
-    animation: vibrate 0.2s ease-in-out infinite;
+    animation: vibrate .5s ease-in-out;
   }
 }
 

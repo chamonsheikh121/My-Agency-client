@@ -6,6 +6,8 @@ import OurWorkProcess from './Components/OurWorkProcess ';
 import HireMessageSection from '../HomePage/Components/HireMessageSection';
 import 'aos/dist/aos.css'; // import AOS styles
 import AOS from 'aos'; // import AOS library
+import { Helmet } from 'react-helmet';
+
 
 const services = [
     {
@@ -259,13 +261,22 @@ const ServiceDetailsPage = () => {
             className="z"
             aria-label="Our Services details "
         >
+
+
+            <Helmet>
+                <title>Team Webio | Services</title>
+
+                <meta description={service?.title}/>
+            </Helmet>
+
+
             <div className="max-w-7xl mx-auto mt-10 rounded-lg overflow-hidden">
                 {/* Header Section */}
                 <div className='w-full h-[600px] z'>
                     <img
                         src={service.img}
                         alt={service.title}
-                        className="w-full h-full object-contain"
+                        className="w-full vibrate h-full object-contain"
                     />
                 </div>
 
@@ -278,7 +289,7 @@ const ServiceDetailsPage = () => {
                                 {service.options.features.map((feature, index) => (
                                     <div key={index} className='rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl bg-transparent'>
                                         <div
-                                            
+
                                             data-aos="fade-up"
                                             className="relative group overflow-hidden "
                                         >

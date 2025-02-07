@@ -128,9 +128,9 @@ const Portfolio = () => {
                                         <div className="absolute inset-0 bg-gray-700 bg-opacity-50 flex flex-col items-center justify-center rounded-lg transition-opacity duration-500">
                                             <h3 className="text-2xl text-white font-bold mb-4">{project.projectName}</h3>
                                             <Link
+                                                onClick={() => window.location.href = '/projects'}
                                                 to={`/projects`} // Dynamic Link
                                                 className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg"
-                                                onClick={() => window.location.href = '/projects'}
                                             >
                                                 <FaEye className="text-xl" />
                                                 View all

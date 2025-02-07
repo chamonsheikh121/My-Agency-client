@@ -5,9 +5,41 @@ import { IoIosLink } from "react-icons/io";
 import 'aos/dist/aos.css'; // import AOS styles
 import AOS from 'aos'; // import AOS library
 import HireMessageSection from "../../HomePage/Components/HireMessageSection";
+import { Helmet } from "react-helmet";
 
 const ProjectDetailsPage = () => {
     const [project, setProject] = useState(null);
+
+
+
+
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            const styles = `
+        @keyframes scrollImage {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100%); }
+        }
+    `;
+
+            const styleSheet = document.createElement("style");
+            styleSheet.type = "text/css";
+            styleSheet.innerText = styles;
+            document.head.appendChild(styleSheet);
+
+            return () => {
+                document.head.removeChild(styleSheet); // Cleanup when component unmounts
+            };
+        }, 1000);
+    }, []);
+
+
+
+
+
+
 
     useEffect(() => {
 
@@ -32,25 +64,42 @@ const ProjectDetailsPage = () => {
     }
 
 
+
     return (
         <div className=" p-6">
             <div className="max-w-7xl mx-auto  rounded-2xl p-8">
+                <Helmet>
+                    <title>Team Webio | Projects</title>
+
+                    <meta description={project?.description ? project?.description : ''} />
+                </Helmet>
 
                 {/* Project Name */}
                 <div className="my-10 text-xl">
                     <h1 className="text-4xl font-extrabold text-purple-800 text-center mb-6">{project.projectName}</h1>
-                    <p className="text-center  max-w-2xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam autem tempore molestias quidem ullam obcaecati quaerat et recusandae quasi optio?</p>
+                    <p className="text-center  max-w-2xl mx-auto">{project?.description ? project?.description : ''}</p>
                 </div>
-                <div className=" w-full vibrate">
-                    {/* Project Image */}
+                <div className="w-full shadow-2xl shadow-black vibrate relative overflow-hidden">
+                    {/* Project Image (First Image) */}
                     {project.imageLink && (
                         <img
                             src={project.imageLink}
                             alt={project.projectName}
-                            className="w-full max-h-[650px] object-cover rounded-lg shadow-lg mb-6"
+                            className="w-full max-h-[650px] object-cover rounded-lg shadow-lg mb-6 transition-opacity duration-500"
                         />
                     )}
+
+                    {/* Hover Effect: Second Image with Scrolling Animation */}
+                    <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                        <img
+                            src={project.fullPageImage}
+                            alt="Full Page Screenshot"
+                            className="absolute w-full object-cover"
+                            style={{ animation: "scrollImage 5s linear infinite" }}
+                        />
+                    </div>
                 </div>
+
                 {/* Project Details */}
                 <div
 
@@ -92,7 +141,7 @@ const ProjectDetailsPage = () => {
                 <div
 
                     data-aos="flip-down"
-                    
+
 
                     className="bg-gradient-to-tr from-purple-400 to-purple-700 p-6 rounded-xl shadow-md shadow-purple-700 m-4 text-center flex flex-col md:flex-row items-center gap-6 transition-transform duration-300 hover:scale-[1.01]">
                     {/* Client Image */}
@@ -128,9 +177,13 @@ const ProjectDetailsPage = () => {
                 {/* Back Button */}
 
                 <div
-                data-aos="fade-up"
-                className="mt-20">
-                    <Link to="/projects" onClick={() => window.location.href = '/projects'}>
+                    data-aos="fade-up"
+                    className="mt-20">
+                    <Link
+
+                        onClick={() => window.location.href = '/projects'}
+                        to="/projects"
+                    >
                         <button className="flex items-center bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-full font-medium transition duration-200 shadow-lg hover:scale-105">
                             <FaCaretLeft className="text-xl" /> {/* React Icon on the left */}
 

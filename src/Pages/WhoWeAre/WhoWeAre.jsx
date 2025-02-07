@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import AgencyMemberCard from './Components/AgencyMemberCard';
 import HireMessageSection from '../HomePage/Components/HireMessageSection';
+import { Helmet } from 'react-helmet';
 
 
 const AboutUs = () => {
@@ -55,6 +56,10 @@ const AboutUs = () => {
             className=""
             aria-label="Our Services"
         >
+
+            <Helmet>
+                <title>Team Webio | WHO WE ARE</title>
+            </Helmet>
             <div className='w-full'>
                 <section className="relative py-20 px-6 md:px-16 bg-gray-900 text-white text-center">
                     {/* Background Glow */}

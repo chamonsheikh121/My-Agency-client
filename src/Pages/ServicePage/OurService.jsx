@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ServiceCard from "./Components/ServiceCard";
 import { motion } from 'framer-motion';
 import HireMessageSection from '../HomePage/Components/HireMessageSection';
+import { Helmet } from 'react-helmet';
 
 
 const OurService = () => {
@@ -260,6 +261,15 @@ const OurService = () => {
             className="min-h-screen flex items-center justify-center"
             aria-label="Our Services"
         >
+
+            <Helmet>
+                <title>Team Webio | Services</title>
+
+                <meta description='Discover our latest projects showcasing innovation, creativity, and technical excellence.
+                            From web applications to impactful solutions, explore how we bring ideas to life. 🚀'/>
+            </Helmet>
+
+
             <section className="relative  w-full">
 
 
@@ -313,7 +323,7 @@ const OurService = () => {
                             <h1 className="text-5xl font-bold text-gray-900">
                                 Our <span className="text-purple-700">Services</span>
                             </h1>
-                            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                            <p className="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
                                 We provide world-class web development services, delivering cutting-edge solutions for businesses and individuals.
                                 From custom website development to performance optimization, we build scalable, secure, and high-performing web applications
                                 that drive success in the digital world. Let's turn your ideas into reality! 🌍🚀

@@ -86,11 +86,10 @@ const MainLayout = () => {
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
           <div
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
-              isSticky
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${isSticky
                 ? "top-0 bg-white/40 shadow-lg backdrop-blur-md"
                 : "top-[-80px] bg-transparent"
-            }`}
+              }`}
           >
             <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 transition-all duration-500">
               <div className="flex-none lg:flex lg:w-1/3">
@@ -116,13 +115,13 @@ const MainLayout = () => {
                 <ul className="hidden lg:flex menu uppercase menu-horizontal text-lg font-medium transition-all duration-500">
                   {navLinks.map(({ path, label }) => (
                     <NavLink
+                      onClick={() => window.location.href = path}
                       key={path}
                       to={path}
                       className={({ isActive }) =>
-                        `relative p-2 text-nowrap text-sm text-gray-700 transition-all
+                        `relative p-2 bg-white/40 shadow-lg backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
                         ${isActive ? "text-purple-800 after:w-full" : "hover:text-gray-900"}`
                       }
-                      onClick={() => window.location.href = path}
                     >
                       {label}
                     </NavLink>

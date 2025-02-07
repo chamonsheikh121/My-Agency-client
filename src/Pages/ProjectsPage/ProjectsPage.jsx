@@ -6,12 +6,16 @@ import { motion } from 'framer-motion';
 import 'aos/dist/aos.css'; // import AOS styles
 import AOS from 'aos'; // import AOS library
 import HireMessageSection from "../HomePage/Components/HireMessageSection";
+import { Helmet } from "react-helmet";
+import img from './../../assets/reviewbg.jpg'
+import secondImg from './../../assets/2nd.png'
 
 const ProjectsPage = () => {
     const projects = [
         {
             "projectName": "Tech Startup Website",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
+            "imageLink": img,
+            "fullPageImage": secondImg, // Full-page screenshot
             "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
             "budget": "$10,000",
             "country": "USA",
@@ -28,192 +32,21 @@ const ProjectsPage = () => {
                 "rating": 5,
                 "image": "https://randomuser.me/api/portraits/men/5.jpg",
             },
-
-        },
-        {
-            "projectName": "E-Commerce Platform",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$15,000",
-            "country": "UK",
-            "clientName": "Jane Smith",
-            "deliveryDate": "2024-02-10",
-            "projectType": "E-Commerce",
-            "websiteURL": "https://www.ecommerce.com",
-            "technologyStack": ["Next.js", "Firebase", "Stripe", "TailwindCSS"],
-            "totalBudget": "$15,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "12 months of ongoing support"
-        },
-        {
-            "projectName": "Portfolio Website",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$5,000",
-            "country": "Canada",
-            "clientName": "Emily Johnson",
-            "deliveryDate": "2023-12-20",
-            "projectType": "Portfolio",
-            "websiteURL": "https://www.emilyportfolio.com",
-            "technologyStack": ["Gatsby", "GraphQL", "Styled Components"],
-            "totalBudget": "$5,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "3 months of free updates"
-        },
-        {
-            "projectName": "Real Estate Website",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$18,000",
-            "country": "Australia",
-            "clientName": "Michael Brown",
-            "deliveryDate": "2024-03-01",
-            "projectType": "Real Estate",
-            "websiteURL": "https://www.realestatehub.com",
-            "technologyStack": ["Vue.js", "Laravel", "MySQL"],
-            "totalBudget": "$18,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "Ongoing support and maintenance"
-        },
-        {
-            "projectName": "Healthcare Dashboard",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$20,000",
-            "country": "Germany",
-            "clientName": "Dr. Alice Cooper",
-            "deliveryDate": "2024-02-25",
-            "projectType": "Healthcare Management",
-            "websiteURL": "https://www.healthdashboard.com",
-            "technologyStack": ["Angular", "Spring Boot", "PostgreSQL"],
-            "totalBudget": "$20,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "24/7 technical support"
-        },
-        {
-            "projectName": "E-Learning Platform",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$22,000",
-            "country": "India",
-            "clientName": "Rajesh Patel",
-            "deliveryDate": "2024-01-30",
-            "projectType": "Education",
-            "websiteURL": "https://www.onlinelearning.com",
-            "technologyStack": ["Django", "React", "AWS S3"],
-            "totalBudget": "$22,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "Ongoing feature updates"
-        },
-        {
-            "projectName": "Travel Agency Website",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$12,000",
-            "country": "France",
-            "clientName": "Sophie Martin",
-            "deliveryDate": "2024-02-05",
-            "projectType": "Travel & Tourism",
-            "websiteURL": "https://www.traveladventure.com",
-            "technologyStack": ["WordPress", "WooCommerce", "PHP"],
-            "totalBudget": "$12,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "6 months of free maintenance"
-        },
-        {
-            "projectName": "Blogging Platform",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$8,000",
-            "country": "Spain",
-            "clientName": "Carlos Ruiz",
-            "deliveryDate": "2024-02-18",
-            "projectType": "Content Publishing",
-            "websiteURL": "https://www.blogspot.com",
-            "technologyStack": ["JAMstack", "Markdown", "Netlify"],
-            "totalBudget": "$8,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "Free SSL and hosting setup"
-        },
-        {
-            "projectName": "Fitness App Website",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$14,000",
-            "country": "Brazil",
-            "clientName": "Lucas Silva",
-            "deliveryDate": "2024-01-28",
-            "projectType": "Health & Fitness",
-            "websiteURL": "https://www.fitlife.com",
-            "technologyStack": ["Flutter Web", "Firebase", "GraphQL"],
-            "totalBudget": "$14,000",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "3 months of free consultation"
-        },
-        {
-            "projectName": "Corporate Business Website",
-            "imageLink": "https://cdn.pixabay.com/photo/2020/05/22/08/17/breakfast-5204352_640.jpg",
-            "videoLink": "https://player.vimeo.com/video/1052802645?h=04f3f00889&",
-            "budget": "$16,500",
-            "country": "Japan",
-            "clientName": "Hiroshi Tanaka",
-            "deliveryDate": "2024-03-10",
-            "projectType": "Corporate",
-            "websiteURL": "https://www.businesscorp.com",
-            "technologyStack": ["ASP.NET", "Azure", "Bootstrap"],
-            "totalBudget": "$16,500",
-            "clientReview": {
-                "name": "Chris Wilson",
-                "description": "Amazing work! The website runs smoothly and looks fantastic.",
-                "rating": 5,
-                "image": "https://randomuser.me/api/portraits/men/5.jpg",
-            },
-            "postLaunchSupport": "Ongoing security updates"
         }
-    ]
+    ];
+
+
+
+    const navigate = useNavigate()
+
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const iframeRefs = useRef([]);
+
+    const saveProjectToLocalStorage = (project) => {
+        localStorage.setItem("selectedProject", JSON.stringify(project));
+        navigate('/project/details');
+    };
 
     useEffect(() => {
         iframeRefs.current.forEach((iframe, index) => {
@@ -237,156 +70,87 @@ const ProjectsPage = () => {
         setHoveredIndex(null);
     };
 
-    const navigate = useNavigate();
-
-    const handleClick = (project) => {
-        localStorage.setItem("selectedProject", JSON.stringify(project));
-        window.location.href = "/project/details"; // Forces a full reload
-    };
-
-
     useEffect(() => {
+        const styles = `
+        @keyframes scrollImage {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100%); }
+        }`;
 
-        AOS.init({
-            duration: 2000,
-            easing: 'ease',
-            once: false,
-        });
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = styles;
+        document.head.appendChild(styleSheet);
 
-
-        AOS.refresh();
-
+        return () => {
+            document.head.removeChild(styleSheet); // Cleanup when component unmounts
+        };
     }, []);
 
 
     return (
-
-
         <motion.section
-            initial={{ opacity: 0, scale: 0.9 }} // Start small and invisible
-            animate={{ opacity: 1, scale: 1 }}  // Grow and appear
-            transition={{ duration: 1, ease: "easeOut" }} // Smooth effect
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className=""
             aria-label="Our Services"
         >
-            <div className="">
+            <Helmet>
+                <title>Team Webio | Projects</title>
+                <meta description='Discover our latest projects showcasing innovation, creativity, and technical excellence.' />
+            </Helmet>
 
-                <section className="relative py-20 px-6 md:px-16 bg-gray-900 text-white text-center">
-                    {/* Background Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-600 opacity-20 blur-3xl"></div>
-
-                    {/* Animated Heading */}
-                    <motion.h2
-                        initial={{ x: 100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="text-5xl py-4  z-40font-extrabold bg-gradient-to-r from-purple-400 to-purple-800 text-transparent bg-clip-text"
-                    >
-                        Multinational Digital Web Development
-                    </motion.h2>
-
-                    {/* Description */}
-                    <p className="mt-6 text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        We build <strong>future-ready web experiences</strong> with <strong>React & Tailwind CSS</strong> for businesses worldwide.
-                        Our <strong>high-performance, scalable, and visually stunning</strong> solutions help brands create a powerful online presence.
+            <div className="max-w-7xl w-full mx-auto">
+                <div data-aos='fade-up' className="text-center my-10 py-10">
+                    <h1 className="text-5xl font-bold text-gray-900">Explore Our <span className="text-purple-700">Projects</span></h1>
+                    <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Discover our latest projects showcasing innovation, creativity, and technical excellence.
                     </p>
-
-                    {/* Service Highlights */}
-                    <div className="mt-10 flex flex-wrap justify-center gap-6">
-                        <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
-                            🚀 Fast & Scalable
-                        </div>
-                        <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
-                            🎨 Modern UI/UX
-                        </div>
-                        <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
-                            🔍 SEO & Performance Optimized
-                        </div>
-                    </div>
-
-
-                </section>
-
-
-
-
-
-                <div className="max-w-7xl w-full mx-auto">
-                    <div
-                        data-aos='fade-up'
-                        className="text-center my-10 py-10">
-                        <h1 className="text-5xl font-bold text-gray-900">Explore Our <span className="text-purple-700">Projects</span></h1>
-                        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                            Discover our latest projects showcasing innovation, creativity, and technical excellence.
-                            From web applications to impactful solutions, explore how we bring ideas to life. 🚀
-                        </p>
-                    </div>
-                    <div
-
-
-                        className="grid lg:grid-cols-2 mb-40 mt-20 gap-10 grid-cols-1">
-                        {projects.map((project, index) => (
-                            <div
-                                data-aos='fade-up'
-                                key={index}
-                                className="shadow-2xl p-10 rounded-md"
-                            >
-
-                                <div
-
-                                    className="relative w-full h-96 md:h-[400px] bg-gray-900 rounded-lg overflow-hidden cursor-pointer"
-                                    onMouseEnter={() => handleMouseEnter(index)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    {/* Default Image */}
-                                    <img
-                                        src={project.imageLink}
-                                        alt="Thumbnail"
-                                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hoveredIndex === index ? "opacity-0" : "opacity-100"}`}
-                                    />
-
-                                    {/* Dynamic Vimeo Iframe */}
-                                    <iframe
-                                        ref={(el) => (iframeRefs.current[index] = el)}
-                                        src={`${project.videoLink}?autoplay=1&muted=1&controls=0&background=1`}
-                                        width="600"
-                                        height="400"
-                                        frameBorder="0"
-                                        allow="autoplay; fullscreen"
-                                        className={`absolute inset-0 w-full hf object-cover transition-opacity duration-500 ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
-                                        title="Vimeo Video"
-                                    ></iframe>
-
-
-
-                                </div>
-                                <div className="flex justify-between p-4 pb-0 pt-6 items-center ">
-                                    <h4 className="text-2xl font-bold">{project?.projectName}</h4>
-                                    <div>
-
-                                        <button
-                                            onClick={() => handleClick(project)}
-                                            className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100 font-semibold px-14 py-2 rounded-md hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl"
-                                        >
-                                            Details
-                                        </button>
-
+                </div>
+                <div className="max-w-5xl mx-auto grid lg:grid-cols-2 mb-40 mt-20 gap-10 grid-cols-1">
+                    {projects.map((project, index) => (
+                        <div
+                            data-aos='fade-up'
+                            key={index}
+                            className="shadow-2xl shadow-black rounded-md cursor-pointer"
+                            onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="relative w-full h-96 md:h-[400px] bg-gray-900 rounded-3xl overflow-hidden">
+                                <img
+                                    src={project.imageLink}
+                                    alt="Thumbnail"
+                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hoveredIndex === index ? "opacity-0" : "opacity-100"}`}
+                                />
+                                {hoveredIndex === index && (
+                                    <div className="absolute inset-0 overflow-hidden">
+                                        <img
+                                            src={project.fullPageImage}
+                                            alt="Full Page Screenshot"
+                                            className="absolute w-full object-cover"
+                                            style={{ animation: "scrollImage 3s linear infinite", zIndex: 10 }}
+                                        />
                                     </div>
-                                </div>
+                                )}
 
                             </div>
-                        ))}
-                    </div>
+                            <div
+
+                                onClick={() => saveProjectToLocalStorage(project)}
+                                className="flex justify-between  p-6 items-center">
+                                <h4 className="text-2xl font-bold">{project.projectName}</h4>
+                                <button className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100 font-semibold px-14 py-2 rounded-md hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                <HireMessageSection firstPart={'Let’s Elevate Your Business '} lastPart={'Together !'}/>
-
             </div>
+            <HireMessageSection firstPart={'Let’s Elevate Your Business '} lastPart={'Together !'} />
         </motion.section>
-
-
     );
 };
 
 export default ProjectsPage;
-
-
