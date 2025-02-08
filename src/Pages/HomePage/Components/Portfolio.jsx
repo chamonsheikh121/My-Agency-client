@@ -15,17 +15,63 @@ import AOS from 'aos'; // import AOS library
 const Portfolio = () => {
     const swiperRef = useRef(null);
     const [hoveredIndex, setHoveredIndex] = useState(null);
+
     const portfolioImages = [
-        { id: 1, imageLink: "https://swiperjs.com/demos/images/nature-1.jpg", projectName: "Mountain Adventure" },
-        { id: 2, imageLink: "https://swiperjs.com/demos/images/nature-2.jpg", projectName: "Serene Waters" },
-        { id: 3, imageLink: "https://swiperjs.com/demos/images/nature-3.jpg", projectName: "Forest Escape" },
-        { id: 4, imageLink: "https://swiperjs.com/demos/images/nature-4.jpg", projectName: "Sunset Bliss" },
-        { id: 5, imageLink: "https://swiperjs.com/demos/images/nature-5.jpg", projectName: "Desert Wonders" },
-        { id: 6, imageLink: "https://swiperjs.com/demos/images/nature-6.jpg", projectName: "Snowy Peaks" },
-        { id: 7, imageLink: "https://swiperjs.com/demos/images/nature-7.jpg", projectName: "Ocean View" },
-        { id: 8, imageLink: "https://swiperjs.com/demos/images/nature-8.jpg", projectName: "Autumn Trail" },
-        { id: 9, imageLink: "https://swiperjs.com/demos/images/nature-9.jpg", projectName: "Hidden Paradise" },
+        {
+            "projectName": "Travel agency",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739008163/project1_iglyke.png",
+           
+        },
+        {
+            "projectName": "Trade Development Corporation",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739008025/proejct5_evijvr.png",
+            
+
+        },
+        {
+            "projectName": "Restaurant management system",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739007755/project3_rghw7d.png",
+           
+        },
+        {
+            "projectName": "Online Restaurant",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739007691/project4_kef8iw.png",
+            
+        },
+        {
+            "projectName": "Car selling",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739007699/project6_pcguzz.png",
+            
+        },
+        {
+            "projectName": "bLood Donation non-profit",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739007681/project2_rbgwdy.png",
+            
+        },
+        {
+            "projectName": "Photography website",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739029448/camera_b5qfzi.png",
+            
+        },
+        {
+            "projectName": "Sports",
+            "imageLink": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739029441/play_muhkcp.png",
+        }
+
     ];
+
+
+    // const portfolioImages = [
+    //     { id: 1, imageLink: "https://swiperjs.com/demos/images/nature-1.jpg", projectName: "Mountain Adventure" },
+    //     { id: 2, imageLink: "https://swiperjs.com/demos/images/nature-2.jpg", projectName: "Serene Waters" },
+    //     { id: 3, imageLink: "https://swiperjs.com/demos/images/nature-3.jpg", projectName: "Forest Escape" },
+    //     { id: 4, imageLink: "https://swiperjs.com/demos/images/nature-4.jpg", projectName: "Sunset Bliss" },
+    //     { id: 5, imageLink: "https://swiperjs.com/demos/images/nature-5.jpg", projectName: "Desert Wonders" },
+    //     { id: 6, imageLink: "https://swiperjs.com/demos/images/nature-6.jpg", projectName: "Snowy Peaks" },
+    //     { id: 7, imageLink: "https://swiperjs.com/demos/images/nature-7.jpg", projectName: "Ocean View" },
+    //     { id: 8, imageLink: "https://swiperjs.com/demos/images/nature-8.jpg", projectName: "Autumn Trail" },
+    //     { id: 9, imageLink: "https://swiperjs.com/demos/images/nature-9.jpg", projectName: "Hidden Paradise" },
+    // ];
 
 
 
@@ -128,7 +174,11 @@ const Portfolio = () => {
                                         <div className="absolute inset-0 bg-gray-700 bg-opacity-50 flex flex-col items-center justify-center rounded-lg transition-opacity duration-500">
                                             <h3 className="text-2xl text-white font-bold mb-4">{project.projectName}</h3>
                                             <Link
-                                                onClick={() => window.location.href = '/projects'}
+                                                
+                                                  onClick={(e) => {
+                                                    e.preventDefault(); // Prevent React Router's default navigation
+                                                    window.location.href = '/projects'; // Force a full reload
+                                                }}
                                                 to={`/projects`} // Dynamic Link
                                                 className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg"
                                             >

@@ -42,7 +42,7 @@ const OurWorkProcess = () => {
       className="relative py-20"
     >
       <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-        <h2 className="text-4xl font-extrabold text-black mb-6">
+        <h2 className="text-5xl font-extrabold text-black mb-6">
           OUR WORK <span className="text-purple-700">PROCESS</span>
         </h2>
         <p className="text-gray-700 max-w-2xl mx-auto mb-12">

@@ -40,11 +40,8 @@ const OurService = () => {
             "id": 0,
             "title": "Custom Coded Web Development",
             "description": "We create custom web solutions tailored to your business needs, from design to functionality.",
-            "img": "https://example.com/images/custom-web-development.png",
-            "isReversed": false,
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024884/custom_coded_dskeab.png",
             "options": {
-                "languages": ["HTML", "CSS", "JavaScript", "PHP"],
-                "frameworks": ["React", "Vue", "Node.js"],
                 "features": [
                     {
                         "title": "Responsive Design",
@@ -85,170 +82,255 @@ const OurService = () => {
                 ]
             }
         },
+
         {
             "id": 1,
-            "title": "UI/UX Design",
-            "description": "Crafting intuitive and visually appealing user interfaces that provide exceptional user experiences.",
-            "img": "https://example.com/images/ui-ux-design.png",
-            "isReversed": true,
+            "title": "Landing Page Development",
+            "description": "We create high-converting landing pages tailored for marketing campaigns, product launches, and lead generation.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024875/landingpage_nrkr9a.png",
             "options": {
-                "tools": ["Figma", "Sketch", "Adobe XD"],
-                "focusAreas": [
+                "features": [
                     {
-                        "title": "Wireframing",
-                        "description": "Wireframes serve as the blueprint for the design of a website or application. We create wireframes to map out the structure and layout of each page, focusing on functionality and the user journey without getting distracted by colors or details."
+                        "title": "Conversion Optimization",
+                        "description": "Designed to maximize leads and sales with strategic call-to-action placements."
                     },
                     {
-                        "title": "Prototyping",
-                        "description": "Prototyping brings your designs to life. By creating interactive prototypes, we help you visualize how users will interact with your product, allowing you to test and iterate on your designs before development begins."
+                        "title": "Mobile-Friendly Design",
+                        "description": "Ensures an optimal viewing experience across all devices."
                     },
                     {
-                        "title": "User Research",
-                        "description": "Understanding your users is key to creating exceptional experiences. Through user research, we gather insights into user behaviors, preferences, and pain points to design solutions that meet their needs and expectations."
+                        "title": "Fast Loading Speed",
+                        "description": "Optimized for quick loading times to reduce bounce rates."
+                    },
+                    {
+                        "title": "SEO Ready",
+                        "description": "Built with best SEO practices to improve search engine rankings."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "title": "Business Website Development",
+            "description": "Professional business websites that enhance your online presence and credibility.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024844/business_bsp5fc.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Custom Branding",
+                        "description": "We design websites that align with your brand identity and goals."
+                    },
+                    {
+                        "title": "Lead Generation",
+                        "description": "Integrated contact forms, live chat, and inquiry forms for customer engagement."
+                    },
+                    {
+                        "title": "Security Features",
+                        "description": "SSL certificates, firewalls, and regular updates to protect your site."
                     }
                 ]
             }
         },
         {
             "id": 3,
-            "title": "E-Commerce Development",
-            "description": "Build secure, scalable online stores with optimized shopping experiences to boost sales.",
-            "img": "https://example.com/images/ecommerce-development.png",
-            "isReversed": false,
+            "title": "Portfolio Website Development",
+            "description": "Showcase your work with a stunning portfolio website tailored to your niche.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024878/portfolio_z77j0n.png",
             "options": {
-                "platforms": ["Shopify", "WooCommerce", "Magento"],
-                "paymentGateways": ["Stripe", "PayPal", "Square"],
                 "features": [
                     {
-                        "title": "Product Management",
-                        "description": "Manage your product catalog effortlessly with robust features for adding, updating, and categorizing products. Bulk upload options and detailed product descriptions make it easy to keep your online store organized."
+                        "title": "Elegant Design",
+                        "description": "Clean, modern layouts that highlight your projects and skills."
                     },
                     {
-                        "title": "Order Tracking",
-                        "description": "Allow customers to track their orders from purchase to delivery. Provide real-time updates, so they know exactly when to expect their package, reducing customer inquiries and enhancing satisfaction."
+                        "title": "Gallery & Media Support",
+                        "description": "Supports high-quality images, videos, and animations."
                     },
                     {
-                        "title": "Payment Integration",
-                        "description": "Integrate secure payment gateways such as Stripe, PayPal, and Square. Customers can easily make purchases through multiple payment options, including credit cards and digital wallets, while you ensure smooth transactions."
-                    },
-                    {
-                        "title": "Flexible Store Customization",
-                        "description": "Tailor your online store to your specific business needs with fully customizable themes, layouts, and designs. Our solutions offer flexibility for both aesthetic and functional changes to match your brand’s identity."
-                    },
-                    {
-                        "title": "Manageable Admin Dashboard",
-                        "description": "A powerful, user-friendly admin dashboard where you can easily track orders, manage products, analyze traffic, and keep an eye on overall store performance. All tools you need in one place for efficient store management."
-                    },
-                    {
-                        "title": "Secure Payment Gateways",
-                        "description": "Ensure safe transactions with top-tier security standards. We integrate secure payment systems that comply with PCI-DSS regulations, so your customers' data is protected from fraud or unauthorized access."
-                    },
-                    {
-                        "title": "Optimized Mobile Shopping Experience",
-                        "description": "Reach customers on the go with a mobile-optimized shopping experience. Whether customers are browsing on smartphones or tablets, they will enjoy smooth navigation, fast loading times, and a seamless checkout process."
-                    },
-                    {
-                        "title": "Fast Page Load Speed",
-                        "description": "Minimize bounce rates by ensuring your site loads quickly. Our optimization techniques reduce image sizes, streamline code, and use content delivery networks (CDN) to ensure a lightning-fast user experience."
-                    },
-                    {
-                        "title": "Multi-Channel Integration",
-                        "description": "Expand your reach by selling across various platforms, including social media, marketplaces (like Amazon, eBay), and mobile apps. Integration across all channels is managed from a single unified dashboard, streamlining inventory and sales."
-                    },
-                    {
-                        "title": "Customer-Friendly Checkout",
-                        "description": "Simplify the checkout process to make it as quick and easy as possible. Allow guest checkouts, offer various payment methods, and ensure a smooth transition from cart to final purchase, reducing cart abandonment rates."
-                    },
-                    {
-                        "title": "Advanced Product Management",
-                        "description": "Manage thousands of products effortlessly. Organize by categories, tags, or attributes, and make bulk edits or uploads quickly. Our system ensures your store stays organized even as your inventory grows."
-                    },
-                    {
-                        "title": "Order Tracking & Management",
-                        "description": "Keep customers informed on the status of their orders with real-time tracking. From the moment of purchase to shipping and delivery, provide clear and consistent updates, improving customer satisfaction and reducing customer service inquiries."
-                    },
-                    {
-                        "title": "SEO & Marketing Optimization",
-                        "description": "Optimize your e-commerce website for search engines to ensure higher visibility and traffic. We provide SEO-friendly features, such as custom URL structures, metadata integration, and marketing tools like coupon codes, social sharing, and email campaigns."
+                        "title": "Social Media Integration",
+                        "description": "Easily connect with your audience across different platforms."
                     }
                 ]
             }
         },
         {
             "id": 4,
-            "title": "Educational Platform",
-            "description": "Create engaging online learning experiences with custom features and content management.",
-            "img": "https://concise-studio.com/wp-content/webp-express/webp-images/themes/concise/assets/images/pages/services/2.png.webp",
-            "isReversed": true,
+            "title": "E-commerce Website Development",
+            "description": "We build powerful online stores with smooth checkout experiences.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024852/e-commerce_zchbul.png",
             "options": {
                 "features": [
                     {
-                        "title": "Video Lessons",
-                        "description": "Create rich, engaging video lessons that are tailored to your course content. With tools for streaming and recording, your educational platform can deliver high-quality video content to users anytime, anywhere."
+                        "title": "Product Management",
+                        "description": "Add, edit, and manage product listings easily."
                     },
                     {
-                        "title": "Quizzes",
-                        "description": "Add interactive quizzes to your educational platform to test students’ knowledge and reinforce learning. Our platform integrates quizzes that offer automatic grading, feedback, and scoring to ensure efficient learning."
+                        "title": "Payment Gateway Integration",
+                        "description": "Supports multiple payment options like PayPal, Stripe, and credit cards."
                     },
                     {
-                        "title": "Certification",
-                        "description": "Reward your students with certification upon completing courses. This feature can help students showcase their newly acquired skills and provide value to your educational program."
-                    }
-                ],
-                "integrations": [
-                    {
-                        "title": "Zoom Integration",
-                        "description": "Integrate Zoom for live video classes, webinars, and interactive learning sessions. This feature is perfect for offering real-time, instructor-led lessons and workshops."
-                    },
-                    {
-                        "title": "Google Classroom Integration",
-                        "description": "Seamlessly integrate Google Classroom to manage assignments, grades, and communication between instructors and students. This enhances the learning experience with easy collaboration tools."
-                    },
-                    {
-                        "title": "LMS Integration",
-                        "description": "Integrate a Learning Management System (LMS) to streamline course administration, content delivery, and student progress tracking. LMS systems allow for easy management and scaling of your educational platform."
+                        "title": "Customer Account System",
+                        "description": "Allows users to create accounts, track orders, and manage their profiles."
                     }
                 ]
             }
-        }
-        ,
+        },
         {
             "id": 5,
-            "title": "Corporate Website",
-            "description": "Develop professional corporate websites that highlight your brand, products, and services.",
-            "img": "https://example.com/images/corporate-website.png",
-            "isReversed": false,
+            "title": "Blog Website Development",
+            "description": "Engage your audience with a beautifully designed blog website.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024839/blog_roimzw.png",
             "options": {
-                "design": [
-                    {
-                        "title": "Minimalist Design",
-                        "description": "A minimalist approach focuses on simplicity, with clean lines, ample white space, and a clear user interface. This design style helps highlight your content and ensures that the website is easy to navigate."
-                    },
-                    {
-                        "title": "Corporate Branding",
-                        "description": "Incorporate your company’s brand identity into the website design, ensuring that all design elements (colors, fonts, logos, etc.) align with your company’s values and image, reinforcing your brand presence online."
-                    },
-                    {
-                        "title": "Clean Layout",
-                        "description": "A clean layout ensures that your website’s structure is simple and uncluttered, with intuitive navigation and easy access to important information. This makes the site user-friendly and accessible for all visitors."
-                    }
-                ],
                 "features": [
                     {
-                        "title": "Contact Forms",
-                        "description": "Incorporate contact forms for direct communication with clients. These forms are customizable to collect specific information and help streamline communication between your business and prospective clients."
+                        "title": "SEO Optimization",
+                        "description": "Built with SEO-friendly structures to rank higher on search engines."
                     },
                     {
-                        "title": "Case Studies",
-                        "description": "Showcase your company’s success stories with detailed case studies. This allows visitors to see real-world examples of how your products or services have helped clients achieve their goals."
+                        "title": "Content Management System",
+                        "description": "Easy-to-use CMS for seamless content updates."
                     },
                     {
-                        "title": "Team Bios",
-                        "description": "Highlight key team members and their expertise. Providing bios and professional details helps visitors connect with your company and builds trust by showcasing the people behind your brand."
+                        "title": "Social Sharing Features",
+                        "description": "Encourages content sharing to increase reach."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "title": "News & Magazine Website Development",
+            "description": "A fast and scalable platform for delivering real-time news and articles.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024866/news_jf7akn.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Multi-Author Support",
+                        "description": "Allows multiple contributors to publish articles."
+                    },
+                    {
+                        "title": "Ad Monetization",
+                        "description": "Supports Google AdSense and sponsored content."
+                    },
+                    {
+                        "title": "Live Updates",
+                        "description": "Real-time news publishing with instant updates."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "title": "Podcast Website Development",
+            "description": "A feature-rich platform for hosting and distributing your podcasts.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024875/podcast_nl5fiu.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Audio Player Integration",
+                        "description": "Custom audio player for seamless podcast streaming."
+                    },
+                    {
+                        "title": "RSS Feed Support",
+                        "description": "Automatically distributes your episodes to podcast directories."
+                    },
+                    {
+                        "title": "Subscription & Downloads",
+                        "description": "Enables users to subscribe and download episodes for offline listening."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "title": "E-learning Website Development",
+            "description": "An interactive learning platform with courses, quizzes, and certifications.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024858/E-learning_tyebth.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Course Management",
+                        "description": "Create and manage courses with structured lessons and quizzes."
+                    },
+                    {
+                        "title": "Student Dashboard",
+                        "description": "Personalized dashboards to track progress."
+                    },
+                    {
+                        "title": "Payment & Subscription Plans",
+                        "description": "Supports paid courses and membership subscriptions."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "title": "School & University Website Development",
+            "description": "A professional website for educational institutions, with student and faculty portals.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024880/school_jllxbe.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Student & Faculty Portals",
+                        "description": "Secure access to student and staff information."
+                    },
+                    {
+                        "title": "Online Admissions",
+                        "description": "Simplifies the application and enrollment process."
+                    },
+                    {
+                        "title": "Course Listings & Timetable",
+                        "description": "Displays available courses, schedules, and academic calendars."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "title": "Event Website Development",
+            "description": "Custom-built event websites for conferences, concerts, and ticket sales.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024851/event_hwsigf.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Online Ticketing System",
+                        "description": "Sell and manage event tickets online."
+                    },
+                    {
+                        "title": "Event Scheduling",
+                        "description": "Displays event details with interactive scheduling."
+                    },
+                    {
+                        "title": "Attendee Registration",
+                        "description": "Easy sign-up and check-in system for attendees."
+                    }
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "title": "Hotel & Travel Booking Website Development",
+            "description": "A comprehensive platform for hotel reservations and travel bookings.",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739024870/booking_snjf2b.png",
+            "options": {
+                "features": [
+                    {
+                        "title": "Real-Time Booking System",
+                        "description": "Enables users to check availability and book rooms instantly."
+                    },
+                    {
+                        "title": "Payment Gateway Integration",
+                        "description": "Supports secure online payments and refunds."
+                    },
+                    {
+                        "title": "Google Maps & Location Services",
+                        "description": "Helps users find hotels and nearby attractions easily."
                     }
                 ]
             }
         }
+
+
 
         // Add other services...
     ];
@@ -318,7 +400,7 @@ const OurService = () => {
 
 
 
-                    <div className='max-w-6xl mx-auto'>
+                    <div className='max-w-7xl mx-auto'>
                         <div data-aos="fade-up" className="text-center my-10 py-10">
                             <h1 className="text-5xl font-bold text-gray-900">
                                 Our <span className="text-purple-700">Services</span>

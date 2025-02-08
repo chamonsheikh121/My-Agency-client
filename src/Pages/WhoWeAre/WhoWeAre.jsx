@@ -10,34 +10,34 @@ const AboutUs = () => {
 
     const members = [
         {
-            "name": "John Doe",
-            "position": "CEO & Founder",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1738602658/member_c0ddwv.png"
+            "name": "Ali",
+            "position": "Founder & CEO",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
             "name": "Jane Smith",
             "position": "Managing Director (MD)",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1738602658/member_c0ddwv.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
             "name": "Michael Brown",
             "position": "Project Manager",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1738602658/member_c0ddwv.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
             "name": "Emily Johnson",
             "position": "UI/UX Designer",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1738602658/member_c0ddwv.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
             "name": "David Wilson",
             "position": "Frontend Developer",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1738602658/member_c0ddwv.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
             "name": "Sophia Martinez",
             "position": "Backend Developer",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1738602658/member_c0ddwv.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         }
     ]
 

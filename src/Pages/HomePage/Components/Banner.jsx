@@ -8,21 +8,21 @@ const Banner = () => {
 
     const [shake, setShake] = useState(false);
 
-  useEffect(() => {
-    const toggleShake = () => {
-      setShake(true);
+    useEffect(() => {
+        const toggleShake = () => {
+            setShake(true);
 
-      setTimeout(() => {
-        setShake(false);
-      }, 2000); // Shake for 2 seconds
-    };
+            setTimeout(() => {
+                setShake(false);
+            }, 2000); // Shake for 2 seconds
+        };
 
-    toggleShake(); // Start the first shake
+        toggleShake(); // Start the first shake
 
-    const interval = setInterval(toggleShake, 5000); // Repeat every 5 seconds (3s off + 2s on)
+        const interval = setInterval(toggleShake, 5000); // Repeat every 5 seconds (3s off + 2s on)
 
-    return () => clearInterval(interval);
-  }, []);
+        return () => clearInterval(interval);
+    }, []);
 
 
 
@@ -54,11 +54,11 @@ const Banner = () => {
                     </div>
 
                     <button
-      className={`bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
+                        className={`bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
         ${shake ? "vibrateHire" : ""}`}
-    >
-      🚀 Hire Now
-    </button>
+                    >
+                        🚀 Hire Now
+                    </button>
 
                     {/* Reviews Section */}
                     <div className="flex items-center space-x-4 pt-6">

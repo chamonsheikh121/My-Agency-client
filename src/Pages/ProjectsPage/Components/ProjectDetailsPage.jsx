@@ -76,15 +76,15 @@ const ProjectDetailsPage = () => {
 
                 {/* Project Name */}
                 <div className="my-10 text-xl">
-                    <h1 className="text-4xl font-extrabold text-purple-800 text-center mb-6">{project.projectName}</h1>
-                    <p className="text-center  max-w-2xl mx-auto">{project?.description ? project?.description : ''}</p>
+                    <h1 className="text-5xl font-extrabold text-purple-800 text-center mb-6">{project?.projectName}</h1>
+                    {/* <p className="text-center  max-w-2xl mx-auto">{project?.description ? project?.description : ''}</p> */}
                 </div>
-                <div className="w-full shadow-2xl shadow-black vibrate relative overflow-hidden">
+                <div className="w-full shadow-2xl mb-20 shadow-black vibrate relative overflow-hidden">
                     {/* Project Image (First Image) */}
-                    {project.imageLink && (
+                    {project?.imageLink && (
                         <img
-                            src={project.imageLink}
-                            alt={project.projectName}
+                            src={project?.imageLink}
+                            alt={project?.projectName}
                             className="w-full max-h-[650px] object-cover rounded-lg shadow-lg mb-6 transition-opacity duration-500"
                         />
                     )}
@@ -92,7 +92,7 @@ const ProjectDetailsPage = () => {
                     {/* Hover Effect: Second Image with Scrolling Animation */}
                     <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 overflow-hidden">
                         <img
-                            src={project.fullPageImage}
+                            src={project?.fullPageImage}
                             alt="Full Page Screenshot"
                             className="absolute w-full object-cover"
                             style={{ animation: "scrollImage 5s linear infinite" }}
@@ -106,12 +106,12 @@ const ProjectDetailsPage = () => {
                     data-aos="fade-up"
                     className=" dark:bg-gray-800  rounded-2xl p-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 dark:text-gray-300 text-lg">
                     {[
-                        { icon: <FaUser className="text-purple-600 text-2xl" />, label: "Client", value: project.clientName },
-                        { icon: <FaDollarSign className="text-green-600 text-2xl" />, label: "Budget", value: `$${project.budget}` },
-                        { icon: <FaGlobe className="text-blue-600 text-2xl" />, label: "Country", value: project.country },
-                        { icon: <FaCalendarAlt className="text-red-500 text-2xl" />, label: "Delivery Date", value: project.deliveryDate },
-                        { icon: <FaCode className="text-indigo-600 text-2xl" />, label: "Technologies", value: project.technologyStack.join(", ") },
-                        { icon: <FaShieldAlt className="text-yellow-600 text-2xl" />, label: "Support", value: project.postLaunchSupport },
+                        { icon: <FaUser className="text-purple-600 text-2xl" />, label: "Client", value: project?.clientReview?.name },
+                        { icon: <FaDollarSign className="text-green-600 text-2xl" />, label: "Budget", value: `$${project?.budget}` },
+
+                        { icon: <FaCalendarAlt className="text-red-500 text-2xl" />, label: "Delivery Date", value: project?.deliveryDate },
+
+                        { icon: <FaShieldAlt className="text-yellow-600 text-2xl" />, label: "Support", value: project?.postLaunchSupport },
 
                     ].map((item, index) => (
                         <div
@@ -160,10 +160,11 @@ const ProjectDetailsPage = () => {
 
                         {/* Client Name & Rating */}
                         <div className="mt-4 flex flex-col items-center md:items-start">
-                            <h4 className="text-lg font-semibold">{project?.clientReview?.name}</h4>
+                            <h4 className="text-xl font-bold text-purple-100">Client: <span className="text-white">{project?.clientReview?.name}</span></h4>
+                            <p>{project?.clientReview?.country}</p>
                             <div className="mt-2 flex space-x-1">
                                 {[...Array(5)].map((_, index) => (
-                                    <span key={index} className={`${index < project?.clientReview?.rating ? "text-yellow-400" : "text-gray-300"}`}>
+                                    <span key={index} className={`${index < project?.clientReview?.rating ? "text-yellow-700" : "text-gray-300"}`}>
                                         ⭐
                                     </span>
                                 ))}
@@ -181,7 +182,13 @@ const ProjectDetailsPage = () => {
                     className="mt-20">
                     <Link
 
-                        onClick={() => window.location.href = '/projects'}
+                        onClick={(e) => {
+                            e.preventDefault(); // Prevent React Router's default navigation
+                            window.location.href = '/projects'; // Force a full reload
+                        }}
+
+
+
                         to="/projects"
                     >
                         <button className="flex items-center bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4 rounded-full font-medium transition duration-200 shadow-lg hover:scale-105">

@@ -45,11 +45,14 @@ const HomePage = () => {
                 transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             >
                 <Link
-
-                    onClick={() => window.location.href = '/services'}
+                    onClick={(e) => {
+                        e.preventDefault(); // Prevent React Router's default navigation
+                        window.location.href = '/services'; // Force a full reload
+                    }}
+                  
                     to='/services'
                 >
-                    <div className="relative bg-purple-900 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
+                    <div className="relative bg-gradient-to-t from-purple-700 via-black to-purple-900 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
                         {/* Starry Background */}
                         <div className="absolute inset-0 opacity-100 pointer-events-none">
                             {[...Array(100)].map((_, i) => (
@@ -78,8 +81,8 @@ const HomePage = () => {
                         {/* Marquee Content */}
                         <Marquee speed={150}>
                             {services.map((item, i) => (
-                                <div key={i} className=" p-4 0 ease-in-out flex  items-center justify-center ">
-                                    <h1 className="text-2xl px-20 py-6 mr-14 bg-white/10 backdrop-blur-lg shadow-lg duration-30 font-semibold text-gray-100">{item.title}</h1>
+                                <div key={i} className="  0 ease-in-out flex  items-center justify-center  rounded-tl-3xl rounded-br-3xl ">
+                                    <h1 className="text-2xl px-20 py-8 uppercase mr-14 bg-white/10 rounded-tl-3xl rounded-br-3xl backdrop-blur-lg shadow-lg duration-30 font-semibold text-gray-100">{item.title}</h1>
                                     <div className="flex justify-center items-center">
                                         <motion.div
                                             animate={{ rotate: 360 }}
@@ -96,8 +99,8 @@ const HomePage = () => {
                                             >
                                                 <defs>
                                                     <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
-                                                        <stop offset="0%" stopColor="#d200e9" />
-                                                        <stop offset="100%" stopColor="#ffffff" />
+                                                        <stop offset="0%" stopColor="#810090" />
+                                                        <stop offset="100%" stopColor="#f453ff" />
                                                     </radialGradient>
                                                 </defs>
                                                 <path d="M50 10 L61 38 L90 40 L66 60 L72 90 L50 75 L28 90 L34 60 L10 40 L39 38 Z" />

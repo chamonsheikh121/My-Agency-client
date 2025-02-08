@@ -87,8 +87,8 @@ const MainLayout = () => {
           {/* Navbar */}
           <div
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${isSticky
-                ? "top-0 bg-white/40 shadow-lg backdrop-blur-md"
-                : "top-[-80px] bg-transparent"
+              ? "top-0 bg-white/40 shadow-lg backdrop-blur-md"
+              : "top-[-80px] bg-transparent"
               }`}
           >
             <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 transition-all duration-500">
@@ -115,11 +115,15 @@ const MainLayout = () => {
                 <ul className="hidden lg:flex menu uppercase menu-horizontal text-lg font-medium transition-all duration-500">
                   {navLinks.map(({ path, label }) => (
                     <NavLink
-                      onClick={() => window.location.href = path}
+
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevent React Router's default navigation
+                        window.location.href = path// Force a full reload
+                      }}
                       key={path}
                       to={path}
                       className={({ isActive }) =>
-                        `relative p-2 bg-white/40 shadow-lg backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
+                        `relative p-2  backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
                         ${isActive ? "text-purple-800 after:w-full" : "hover:text-gray-900"}`
                       }
                     >
