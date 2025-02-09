@@ -13,14 +13,14 @@ const HireMessageSection = ({ firstPart, lastPart }) => {
 
       {/* Content Wrapper */}
       <div className="relative space-y-10 z-10 max-w-3xl">
-        <h2 className="text-5xl font-extrabold mb-4 text-gray-700">
+        <h2 className="md:text-5xl text-3xl font-extrabold mb-4 text-gray-700">
           {firstPart ? firstPart : 'Ready To Grow'} <span className='text-purple-800'>{lastPart ? lastPart : 'Your Business?'}</span>
         </h2>
         <p className="text-lg mb-6 text-gray-600">
           Just take a step ahead and Hire now or get a free quote to discuss how we can help you.
         </p>
-        <button className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100  font-semibold px-14 py-3 rounded-md hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
-          Hire now
+        <button className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100  font-semibold px-14 py-3 rounded-md hover:scale-105 md:text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
+          Hire Team Webio
         </button>
       </div>
     </section>

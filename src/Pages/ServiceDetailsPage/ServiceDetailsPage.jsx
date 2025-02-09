@@ -357,6 +357,10 @@ const ServiceDetailsPage = () => {
 
             <div className="max-w-7xl mx-auto mt-10 rounded-lg overflow-hidden">
                 {/* Header Section */}
+                <div className="my-10 text-xl">
+                    <h1 className="md:text-5xl text-4xl font-extrabold text-purple-800 text-center mb-6">{service?.title}</h1>
+                    {/* <p className="text-center  max-w-2xl mx-auto">{project?.description ? project?.description : ''}</p> */}
+                </div>
                 <div className='w-full h-[600px] rounded-md'>
                     <img
                         src={service.img}
@@ -369,7 +373,10 @@ const ServiceDetailsPage = () => {
                 <div className="">
                     {service.options.features && (
                         <div>
-                            <h4 className="text-3xl font-bold my-10 text-purple-600">Features:</h4>
+                            <div className=' my-10'>
+                                <h4 className="text-3xl  font-bold text-purple-600">Features:</h4>
+                                <hr className='w-1/12 border-2 mt-2 border-purple-700'/>
+                            </div>
                             <div className="mt-4 p-10 space-y-10">
                                 {service.options.features.map((feature, index) => (
                                     <div key={index} className='rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl bg-transparent'>

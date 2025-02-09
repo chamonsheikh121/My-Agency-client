@@ -2,6 +2,7 @@ import './Style.css'
 import 'aos/dist/aos.css'; // import AOS styles
 import AOS from 'aos'; // import AOS library
 import { useEffect } from 'react';
+import TW from '../../../assets/svg logo main.svg'
 
 const TextAnimation = ({textColor}) => {
 
@@ -24,7 +25,7 @@ const TextAnimation = ({textColor}) => {
           {/* Container */}
           <div data-aos="zoom-in" className="relative  w-48 h-48 flex items-center justify-center">
             {/* Centered TW Text */}
-            <div className=" text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">TW</div>
+            <div className=" text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text"><img src={TW} alt="" className='block w-32' /></div>
     
             {/* Circling Text */}
             <div className="absolute w-full h-full animate-spin-slow">

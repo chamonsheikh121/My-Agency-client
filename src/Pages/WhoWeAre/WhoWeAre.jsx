@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import AgencyMemberCard from './Components/AgencyMemberCard';
 import HireMessageSection from '../HomePage/Components/HireMessageSection';
 import { Helmet } from 'react-helmet';
+import VideoPlayer from '../Components/VideoPlayer';
+
 
 
 const AboutUs = () => {
@@ -15,9 +17,9 @@ const AboutUs = () => {
             "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
-            "name": "Jane Smith",
+            "name": "MD Hasibul Hasan",
             "position": "Managing Director (MD)",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739123012/hasib_mbylcl.png"
         },
         {
             "name": "Michael Brown",
@@ -89,25 +91,25 @@ const AboutUs = () => {
                     </motion.p>
 
                     {/* Service Highlights */}
-                    <div className="mt-10 flex flex-wrap justify-center gap-6">
-                        <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
+                    <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+                        <div className="px-6 py-3 md:w-auto w-full bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
                             🚀 Fast & Scalable
                         </div>
-                        <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
+                        <div className="px-6 py-3 md:w-auto w-full bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
                             🎨 Modern UI/UX
                         </div>
-                        <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
+                        <div className="px-6 py-3 md:w-auto w-full bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
                             🔍 SEO & Performance Optimized
                         </div>
                     </div>
                 </section>
 
-                <div className='max-w-7xl mx-auto my-32 flex justify-center items-center'>
+                <div className='max-w-7xl mx-auto my-32  flex justify-center items-center'>
 
-                    <div className=' w-full mx-auto leading-relaxed ml-2'>
+                    <div className=' w-full mx-auto  leading-relaxed md:ml-2'>
                         <h4 className='text-5xl font-bold mb-28'>Meet <span className='text-purple-700'>Our Team</span></h4>
                         <div
-                            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 '
+                            className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 '
                         >
                             {members?.length > 0 && members?.map((member, i) => <AgencyMemberCard
                             data-aos='fade-up'
@@ -116,6 +118,7 @@ const AboutUs = () => {
 
                     </div>
                 </div>
+                <VideoPlayer/>
 
                 <HireMessageSection/>
             </div>

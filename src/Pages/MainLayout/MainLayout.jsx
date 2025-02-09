@@ -1,8 +1,10 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../HomePage/Components/Footer";
 import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import './../../index.css'
+import Logo from '../../assets/navLogo.png'
+import TW from '../../assets/svg logo main.svg'
 
 const MainLayout = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -10,7 +12,7 @@ const MainLayout = () => {
   const [showWelcome, setShowWelcome] = useState(false);
 
   const navLinks = [
-    { path: "/", label: "Home" },
+    // { path: "/", label: "Home" },
     { path: "/who_we_are", label: "Who we are" },
     { path: "/projects", label: "Projects" },
     { path: "/services", label: "Services" },
@@ -91,12 +93,12 @@ const MainLayout = () => {
               : "top-[-80px] bg-transparent"
               }`}
           >
-            <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 transition-all duration-500">
-              <div className="flex-none lg:flex lg:w-1/3">
+            <div className="max-w-7xl mx-auto flex items-center  justify-between py-4 px-4 transition-all duration-500">
+              <div className="flex-none lg:flex lg:w-1/3 ">
                 <label
                   htmlFor="my-drawer-3"
                   aria-label="open sidebar"
-                  className="btn btn-square btn-ghost lg:hidden"
+                  className="btn btn-square btn-ghost lg:hidden "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +126,7 @@ const MainLayout = () => {
                       to={path}
                       className={({ isActive }) =>
                         `relative p-2  backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
-                        ${isActive ? "text-purple-800 after:w-full" : "hover:text-gray-900"}`
+                        ${isActive ? "text-purple-800 after:w-full font-extrabold" : "hover:text-gray-900"}`
                       }
                     >
                       {label}
@@ -134,10 +136,22 @@ const MainLayout = () => {
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="text-3xl md:text-4xl font-extrabold text-gray-900 flex items-center transition-all duration-500">
-                  <span className="text-blue-600">Team</span>
+                  {/* <span className="text-blue-600">Team</span>
                   <span className="ml-1 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
                     Webio
-                  </span>
+                  </span> */}
+                  <div className="w-52 h-[60px] \">
+                    <Link
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevent React Router's default navigation
+                        window.location.href = '/' // Force a full reload
+                      }}
+
+                      to={'/'}
+                    >
+                      <img className="w-full h-full object-cover " src={Logo} />
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="w-1/3 hidden lg:block"></div>
@@ -151,10 +165,36 @@ const MainLayout = () => {
 
         {/* Sidebar Drawer */}
         <div className="drawer-side z-50">
-          <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="menu bg-base-200 min-h-full w-80 p-4">
-            <li><a>Sidebar Item 1</a></li>
-            <li><a>Sidebar Item 2</a></li>
+          <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay "></label>
+          <ul className="menu bg-base-200 min-h-full w-60 p-4">
+            <Link
+              onClick={(e) => {
+                e.preventDefault(); // Prevent React Router's default navigation
+                window.location.href = '/' // Force a full reload
+              }}
+              to='/'
+            >
+              <div className="w-52 h-[60px] mb-10">
+                <img className="w-full h-full object-cover" src={Logo} />
+              </div>
+            </Link>
+            {navLinks.map(({ path, label }) => (
+              <NavLink
+
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent React Router's default navigation
+                  window.location.href = path// Force a full reload
+                }}
+                key={path}
+                to={path}
+                className={({ isActive }) =>
+                  `relative p-2  backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
+                        ${isActive ? "text-purple-800 after:w-full border border-purple-600 font-bold" : "hover:text-gray-900"}`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
           </ul>
         </div>
       </div>

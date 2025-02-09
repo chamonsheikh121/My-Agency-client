@@ -66,8 +66,8 @@ const ProjectDetailsPage = () => {
 
 
     return (
-        <div className=" p-6">
-            <div className="max-w-7xl mx-auto  rounded-2xl p-8">
+        <div className=" md:p-6">
+            <div className="max-w-7xl w-full mx-auto  rounded-2xl p-8">
                 <Helmet>
                     <title>Team Webio | Projects</title>
 
@@ -131,7 +131,7 @@ const ProjectDetailsPage = () => {
                     >
                         <p className="opacity-70"> <IoIosLink /></p>
                         <p className="flex-1">
-                            <a className="font-semibold bg-gray-300 p-2  text-gray-900 dark:text-white hover:underline cursor-pointer">Live Link:</a> Not available for security issue
+                            <a className="font-semibold bg-gray-300 p-2  text-gray-900 dark:text-white hover:underline cursor-pointer">Live Link:</a> <span className="text-sm md:text-lg">Not available for security issue</span>
                         </p>
                     </div>
                 </div>

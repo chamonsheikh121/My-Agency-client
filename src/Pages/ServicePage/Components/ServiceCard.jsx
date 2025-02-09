@@ -3,7 +3,7 @@ import AOS from 'aos';
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ id, title, description, img, isReversed, visibleCard }) => {
+const ServiceCard = ({ id, title, description, img, visibleCard }) => {
     const cardRef = useRef(null);
     const isActive = visibleCard == id; // Check if this card is currently visible
     console.log(isActive, id);
@@ -23,13 +23,13 @@ const ServiceCard = ({ id, title, description, img, isReversed, visibleCard }) =
             ref={cardRef}
             data-id={id}
             data-aos="fade-up"
-            className={`service-card flex ${isReversed ? "flex-row-reverse" : "flex-row"} items-center w-full justify-between gap-10 py-16 px-10 md:px-20 relative`}
+            className={`service-card flex flex-col-reverse lg:flex-row items-center w-full justify-between gap-10 py-16 px-4 md:px-20 relative`}
         >
             {/* Background Styling */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-purple-100 opacity-50 rounded-2xl blur-3xl"></div>
 
             {/* Text Content */}
-            <div className="relative w-1/2 p-6">
+            <div className="relative w-full p-6">
                 <h2 className={`text-4xl font-extrabold transition-colors duration-500 ${isActive ? "text-purple-700" : "text-gray-900"}`}>
                     {title}
                 </h2>

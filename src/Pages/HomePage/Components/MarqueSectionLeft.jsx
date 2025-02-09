@@ -68,7 +68,7 @@ const MarqueSectionLeft = () => {
 
 
     return (
-        <div  className="rotate-2">
+        <div  className="rotate-2 w-[calc(100%-15px)]">
             <Marquee
                 pauseOnHover
                 gradient
@@ -78,7 +78,7 @@ const MarqueSectionLeft = () => {
                 {
                     cardSlides?.map((item, i) => <div
                     key={i}
-                    className="w-[500px] h-72 bg-white mx-4 p-6 space-y-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out flex items-start flex-col  justify-center">
+                    className="w-[450px] h-72 bg-white mx-4 p-6 space-y-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out flex items-start flex-col  justify-center">
                         {/* Profile Section */}
                         <img
                             src={item?.profilePicture}

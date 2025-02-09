@@ -178,7 +178,11 @@ const ProjectsPage = () => {
 
     const saveProjectToLocalStorage = (project) => {
         localStorage.setItem("selectedProject", JSON.stringify(project));
-        navigate('/project/details');
+        window.location.href = '/project/details'
+        setTimeout(() => {
+            navigate('/project/details');
+
+        }, 3000);
     };
 
     useEffect(() => {
@@ -236,21 +240,24 @@ const ProjectsPage = () => {
 
             <div className="max-w-7xl w-full mx-auto">
                 <div data-aos='fade-up' className="text-center my-10 py-10">
-                    <h1 className="text-6xl font-extrabold text-gray-900">Explore Our <span className="text-purple-700">Projects</span></h1>
+                    <h1 className="md:text-6xl text-5xl font-extrabold text-gray-900">Explore Our <span className="text-purple-700">Projects</span></h1>
                     <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
                         Discover our latest projects showcasing innovation, creativity, and technical excellence.
                     </p>
                 </div>
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 mb-40 mt-20 gap-20 grid-cols-1">
+                <div className="max-w-7xl mx-auto grid md:px-0 px-2 lg:grid-cols-2 mb-40 mt-20 gap-20 grid-cols-1">
                     {projects.map((project, index) => (
                         <div
                             data-aos='fade-up'
                             key={index}
-                            className="shadow-2xl shadow-black rounded-md cursor-pointer"
+                            onClick={() => saveProjectToLocalStorage(project)}
+                            className=" rounded-md cursor-pointer"
                             onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <div className="relative w-full border-b border-b-purple-700 h-96 md:h-[400px] bg-gray-900 rounded-3xl overflow-hidden">
+                            <div
+
+                                className="relative shadow-md shadow-black w-full border-b border-b-purple-700 h-96 md:h-[400px] bg-gray-900 rounded-3xl overflow-hidden">
                                 <img
                                     src={project.imageLink}
                                     alt="Thumbnail"
@@ -270,12 +277,12 @@ const ProjectsPage = () => {
                             </div>
                             <div
 
-                                onClick={() => saveProjectToLocalStorage(project)}
-                                className="flex justify-between bg-white p-6 items-center">
-                                <h4 className="text-2xl font-bold">{project.projectName}</h4>
-                                <button className="bg-gradient-to-t from-purple-400 to-purple-800 text-purple-100 font-semibold px-14 py-2 my-1 rounded-md hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
+
+                                className=" mt-4  p-6">
+                                <h4 className="capitalize text-center text-2xl font-bold">{project.projectName}</h4>
+                                {/* <button className="bg-gradient-to-t mt-4 from-purple-400 to-purple-800 text-purple-100 font-semibold px-14 py-2 my-1 rounded-md hover:scale-105 text-lg shadow-lg transition-all duration-300 hover:bg-purple-700 hover:text-white hover:shadow-xl">
                                     Details
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     ))}

@@ -177,23 +177,23 @@ const Review = () => {
                 backgroundPosition: "center",
             }}
         >
-            <div className="h-full w-full bg-black py-32 bg-opacity-60">
+            <div className="h-full w-full bg-black md:py-20  bg-opacity-60">
                 <div className="max-w-xl ">
-                    <div className="bg-purple-700 text-white rounded-md shadow-2xl shadow-purple-400 backdrop-blur-sm p-4  inline-block text-center">
-                        <h2 className="text-5xl  font-extrabold ">
+                    <div className="bg-purple-700 mb-20 text-white rounded-md shadow-md shadow-purple-500 backdrop-blur-sm p-4  inline-block text-center">
+                        <h2 className="md:text-5xl  font-extrabold ">
                             <span className="">What Our</span> Clients Say
                         </h2>
                         <hr className="w-1/4 border-b-2 border-white  mt-2" />
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-0 w-full ">
+            <div className="absolute bottom-0 w-full mt-10">
                 <div data-aos="zoom-in-down" className="max-w-7xl mx-auto  md:mr-10 mb-10 z-30 rounded-xl p-8 ">
 
                     <Swiper
                         spaceBetween={0}
                         autoplay={{ delay: 3000, disableOnInteraction: false }}
-                        pagination={{ clickable: true }}
+                        // pagination={{ clickable: true }}
                         modules={[Autoplay, Pagination]}
                         breakpoints={{
                             640: { slidesPerView: 1 },
@@ -203,7 +203,7 @@ const Review = () => {
                     >
                         {reviews.map((review) => (
                             <SwiperSlide key={review.id}>
-                                <div className="bg-gradient-to-tr from-purple-400 to-purple-800 p-6 rounded-xl shadow-md shadow-purple-700 m-4 text-center   h-[400px] flex flex-col justify-between gap-4 transform transition-transform hover:scale-105">
+                                <div className="bg-gradient-to-tr from-purple-400 to-purple-800 p-6 rounded-xl shadow-md shadow-purple-700 m-4 text-center h-[400px] flex flex-col justify-between gap-1  transform transition-transform hover:scale-105">
                                     <div className="flex justify-center">
                                         <img
                                             src={review.image}
@@ -217,7 +217,7 @@ const Review = () => {
                                             {review.description}
                                         </p>
                                     </div>
-                                    <h4 className="mt-4 text-2xl font-semibold text-white">{review.name}</h4>
+                                    <h4 className="mt-0 text-2xl font-semibold text-white">{review.name}</h4>
                                     <p className="font-bold">{review?.country}</p>
                                     <div className="mt-2 flex justify-center space-x-1">
                                         {Array.from({ length: 5 }).map((_, index) => (

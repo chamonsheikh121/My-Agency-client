@@ -36,7 +36,7 @@ const WeHaveCompleted = () => {
           <motion.div
         
             ref={ref}
-            className="bg-gradient-to-b rounded-tl-full rounded-br-full from-purple-600 to-purple-400 text-white py-8 px-6 shadow-xl"
+            className="bg-gradient-to-b md:rounded-tl-full shadow-2xl shadow-purple-950 md:rounded-br-full from-purple-600 to-purple-400 text-white py-8 px-6 "
         >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 {stats.map(({ id, value, suffix, label, icon }) => (
@@ -47,12 +47,12 @@ const WeHaveCompleted = () => {
                         transition={{ duration: 0.5, delay: id * 0.2 }}
                         className="flex flex-col items-center"
                     >
-                        <h2 className="text-4xl font-bold flex items-center gap-2">
-                            {icon && <span className="text-5xl">{icon}</span>}
+                        <h2 className="md:text-4xl text-3xl font-bold flex items-center gap-2">
+                            {icon && <span className="md:text-5xl">{icon}</span>}
                             {inView ? <CountUp end={value} duration={2.5} /> : "0"}
                             {suffix}
                         </h2>
-                        <p className="text-lg font-medium">{label}</p>
+                        <p className="md:text-lg font-medium">{label}</p>
                     </motion.div>
                 ))}
             </div>

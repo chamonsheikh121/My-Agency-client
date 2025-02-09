@@ -380,14 +380,14 @@ const OurService = () => {
                         </p>
 
                         {/* Service Highlights */}
-                        <div className="mt-10 flex flex-wrap justify-center gap-6">
-                            <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
+                        <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+                            <div className="px-6 py-3 md:w-auto w-full bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
                                 🚀 Fast & Scalable
                             </div>
-                            <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
+                            <div className="px-6 py-3 md:w-auto w-full bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
                                 🎨 Modern UI/UX
                             </div>
-                            <div className="px-6 py-3 bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
+                            <div className="px-6 py-3 md:w-auto w-full bg-white/10 border border-white/20 rounded-lg shadow-md hover:bg-white/20 transition-all">
                                 🔍 SEO & Performance Optimized
                             </div>
                         </div>

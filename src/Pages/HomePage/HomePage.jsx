@@ -12,6 +12,7 @@ import HireMessageSection from "./Components/HireMessageSection";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { Helmet } from 'react-helmet';
+import VideoPlayer from '../Components/VideoPlayer';
 
 const HomePage = () => {
     const services = [
@@ -49,10 +50,10 @@ const HomePage = () => {
                         e.preventDefault(); // Prevent React Router's default navigation
                         window.location.href = '/services'; // Force a full reload
                     }}
-                  
+
                     to='/services'
                 >
-                    <div className="relative bg-gradient-to-t from-purple-700 via-black to-purple-900 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
+                    <div className="relative bg-gradient-to-t from-purple-700 via-purple-900 to-purple-700 py-10 mt-20 hover:scale-105 duration-500 transition-all overflow-hidden shadow-2xl">
                         {/* Starry Background */}
                         <div className="absolute inset-0 opacity-100 pointer-events-none">
                             {[...Array(100)].map((_, i) => (
@@ -69,20 +70,13 @@ const HomePage = () => {
                             ))}
                         </div>
 
-                        {/* Animated Grid Overlay */}
-                        <div className="absolute inset-0 bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20 pointer-events-none animate-pulse"></div>
 
-                        {/* Neon Glow Effect */}
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(173,216,230,0.07),_transparent),radial-gradient(circle_at_bottom_right,_rgba(238,130,238,0.07),_transparent)]"></div>
-
-                        {/* Outer Shadow for Depth */}
-                        <div className="absolute -inset-4 blur-3xl opacity-30 bg-purple-500/20"></div>
 
                         {/* Marquee Content */}
                         <Marquee speed={150}>
                             {services.map((item, i) => (
-                                <div key={i} className="  0 ease-in-out flex  items-center justify-center  rounded-tl-3xl rounded-br-3xl ">
-                                    <h1 className="text-2xl px-20 py-8 uppercase mr-14 bg-white/10 rounded-tl-3xl rounded-br-3xl backdrop-blur-lg shadow-lg duration-30 font-semibold text-gray-100">{item.title}</h1>
+                                <div key={i} className="pl-10 ease-in-out flex  items-center justify-center  rounded-tl-3xl rounded-br-3xl ">
+                                    <h1 className="md:text-2xl text-xl px-20 py-8 uppercase mr-14 bg-white/10 rounded-tl-3xl rounded-br-3xl backdrop-blur-lg shadow-lg duration-30 font-semibold text-gray-100">{item.title}</h1>
                                     <div className="flex justify-center items-center">
                                         <motion.div
                                             animate={{ rotate: 360 }}
@@ -99,8 +93,9 @@ const HomePage = () => {
                                             >
                                                 <defs>
                                                     <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
-                                                        <stop offset="0%" stopColor="#810090" />
-                                                        <stop offset="100%" stopColor="#f453ff" />
+                                                        <stop offset="0%" stopColor="#ffffff" />
+
+                                                        <stop offset="100%" stopColor="#ffffff" />
                                                     </radialGradient>
                                                 </defs>
                                                 <path d="M50 10 L61 38 L90 40 L66 60 L72 90 L50 75 L28 90 L34 60 L10 40 L39 38 Z" />
@@ -116,10 +111,6 @@ const HomePage = () => {
             </motion.div>
 
 
-
-
-
-
             {/* About Us Section with Animation */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -129,6 +120,12 @@ const HomePage = () => {
             >
                 <AboutUs />
             </motion.div>
+
+            {/* About Us Section with Animation */}
+          
+                <VideoPlayer />
+           
+
 
             {/* Marquee Sections with Different Animations */}
             <motion.div

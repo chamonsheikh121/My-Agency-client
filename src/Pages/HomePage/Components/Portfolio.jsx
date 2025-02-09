@@ -109,7 +109,7 @@ const Portfolio = () => {
             </div>
             <section className="bg-gray-900 text-purple-600 pb-44">
                 <div className="pb-32 pt-52 pl-10">
-                    <h2 data-aos="fade-up" className="text-5xl font-bold mb-6"><span className="text-purple-100">Our</span> Portfolio</h2>
+                    <h2 data-aos="fade-up" className="text-5xl font-extrabold mb-6"><span className="text-purple-100">Our</span> Portfolio</h2>
                     <p data-aos="fade-up" className="text-lg mb-8 text-purple-100">
                         Explore some of our best work, crafted with precision and creativity.
                     </p>
@@ -165,7 +165,7 @@ const Portfolio = () => {
                                     <img
                                         src={project.imageLink}
                                         alt={project.projectName}
-                                        className="rounded-lg transition-all object-cover shadow-2xl shadow-purple-100 w-full h-[500px]"
+                                        className="rounded-lg transition-all object-cover shadow-2xl shadow-purple-800 w-full h-[500px]"
                                         loading="lazy"
                                     />
 

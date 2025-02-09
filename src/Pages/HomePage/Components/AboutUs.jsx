@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import 'aos/dist/aos.css'; // import AOS styles
 import AOS from 'aos'; // import AOS library
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
 
@@ -21,7 +22,7 @@ const AboutUs = () => {
         <section
             data-aos="fade-up"
             data-aos-duration="3000"
-            className="relative py-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-10"
+            className="relative py-16 px-2 md:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-10"
             style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?business,technology')" }}
         >
             {/* Overlay */}
@@ -35,9 +36,9 @@ const AboutUs = () => {
                 {/* Left Side: Images */}
                 <div className="relative h-[500px] w-full md:w-1/2 flex items-center justify-center">
                     {/* Top Left Image */}
-                    <div data-aos="fade-up"  className="absolute object-cover hover:shadow-2xl hover:scale-105 transition-all top-0 right-0 shadow-lg rounded-br-[100px] rounded-tl-[100px] w-40 md:w-60 h-[300px]">
+                    <div data-aos="fade-up" className="absolute object-cover hover:shadow-2xl hover:scale-105 transition-all top-0 right-0 shadow-lg rounded-br-[100px] rounded-tl-[100px] w-40 md:w-60 h-[300px]">
                         <img
-                            
+
                             src="https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=600"
                             alt="Team Working"
                             className="absolute object-cover hover:shadow-2xl hover:scale-105 duration-300 transition-all top-0 right-0 shadow-lg rounded-br-[100px] rounded-tl-[100px] w-40 md:w-60 h-[300px]"
@@ -48,7 +49,7 @@ const AboutUs = () => {
 
                     <div data-aos="fade-down" className='absolute object-cover hover:shadow-2xl hover:scale-105 duration-300 transition-all bottom-0 rounded-br-[100px] rounded-tl-[100px] left-0 h-[300px] shadow-lg w-40 md:w-60'>
                         <img
-                            src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            src="https://res.cloudinary.com/dcqfonnjc/image/upload/v1739130943/service-2-350x220.jpg_fvnzj2.png"
                             alt="Office Environment"
                             className=" object-cover hover:shadow-2xl hover:scale-105 duration-300 transition-all rounded-br-[100px] rounded-tl-[100px]  h-full shadow-lg w-full"
                         />
@@ -70,9 +71,17 @@ const AboutUs = () => {
                     <p className="text-gray-500 mt-4 text-lg font-semibold">
                         With expertise spanning multiple industries, we craft <strong>powerful and innovative</strong> custom web solutions that enhance user experience, boost engagement, and optimize performance. Whether it’s an <strong>e-commerce store, SaaS platform, enterprise website,</strong> or a <strong>custom-coded solution</strong>, we leverage the latest technologies to turn your vision into reality with precision and excellence.
                     </p>
-                    <button data-aos="zoom-in" className="mt-6 text-white bg-purple-600 hover:bg-gradient-to-t from-purple-500 to-purple-700 hover:shadow-xl font-semibold px-6 py-3 rounded-lg shadow-md transition">
-                        📩 Get in touch today!
-                    </button>
+                    <Link
+                    onClick={(e) => {
+                        e.preventDefault(); // Prevent React Router's default navigation
+                        window.location.href = '/who_we_are'; // Force a full reload
+                    }}
+                    to={'/who_we_are'}
+                    >
+                        <button data-aos="zoom-in" className="mt-6 text-white bg-purple-600 hover:bg-gradient-to-t from-purple-500 to-purple-700 hover:shadow-xl font-semibold px-6 py-3 rounded-lg shadow-md transition">
+                            Learn more
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

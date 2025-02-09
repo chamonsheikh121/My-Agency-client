@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+// import bgLogo from '../../../assets/mainLogo.png'
 
 const AgencyMemberCard = ({img, name,position}) => {
     const [hovered, setHovered] = useState(false);
@@ -26,9 +27,9 @@ const AgencyMemberCard = ({img, name,position}) => {
     return (
         <div
         data-aos='fade-up'
-        className="flex flex-col items-center">
+        className="flex  flex-col items-center">
             <motion.div
-                className="relative w-96 h-72 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-purple-700 via-gray-200 hover:via-purple-400 to-blue-600 hover:shadow-purple-900 p-6 text-center hover:shadow-2xl transition-transform duration-300 transform hover:scale-105"
+                className="relative md:w-96 w-11/12 h-72  rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-purple-700 via-gray-200 hover:via-purple-400 to-blue-600 hover:shadow-purple-900 p-6 text-center hover:shadow-2xl transition-transform duration-300 transform hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
@@ -41,7 +42,7 @@ const AgencyMemberCard = ({img, name,position}) => {
                     className="absolute inset-0 flex items-center justify-center text-7xl font-extrabold uppercase text-white opacity-0 transition-opacity duration-500"
                     animate={{ opacity: hovered ? 0.2 : 0, y: hovered ? -20 : 0 }}
                 >
-                    Team Webio
+                   TEam webio
                 </motion.div>
                 <motion.img
                     className="w-72 h-72 drop-shadow-[0_10px_10px_rgba(128,128,128,0.8)] object-cover absolute bottom-0 left-[13%] -translate-x-[50px]"
