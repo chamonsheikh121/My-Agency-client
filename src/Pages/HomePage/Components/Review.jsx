@@ -188,7 +188,7 @@ const Review = () => {
                 </div>
             </div>
             <div className="absolute bottom-0 w-full mt-10">
-                <div data-aos="zoom-in-down" className="max-w-7xl mx-auto  md:mr-10 mb-10 z-30 rounded-xl p-8 ">
+                <div data-aos="zoom-in-down" className="max-w-7xl mx-auto  md:mr-0 mb-10 z-30 rounded-xl p-8 ">
 
                     <Swiper
                         spaceBetween={0}

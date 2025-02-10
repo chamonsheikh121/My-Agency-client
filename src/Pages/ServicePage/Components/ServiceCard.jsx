@@ -3,7 +3,7 @@ import AOS from 'aos';
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ id, title, description, img, visibleCard }) => {
+const ServiceCard = ({ key, id, title, description, img, visibleCard }) => {
     const cardRef = useRef(null);
     const isActive = visibleCard == id; // Check if this card is currently visible
     console.log(isActive, id);
@@ -23,7 +23,7 @@ const ServiceCard = ({ id, title, description, img, visibleCard }) => {
             ref={cardRef}
             data-id={id}
             data-aos="fade-up"
-            className={`service-card flex flex-col-reverse lg:flex-row items-center w-full justify-between gap-10 py-16 px-4 md:px-20 relative`}
+            className={`service-card flex flex-col-reverse ${id % 2 == 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}  items-center w-full justify-between gap-10 py-16 px-4 md:px-20 relative`}
         >
             {/* Background Styling */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-purple-100 opacity-50 rounded-2xl blur-3xl"></div>
@@ -54,8 +54,8 @@ const ServiceCard = ({ id, title, description, img, visibleCard }) => {
             </div>
 
             {/* Image with Glow Effect */}
-            <div className="relative w-3/4  hover:scale-105 transition-transform duration-300">
-                <div className="absolute -top-5 -left-5 w-full h-full hover:opacity-0 transition-all duration-300 bg-purple-300 rounded-xl opacity-30 blur-2xl"></div>
+            <div className="relative w-3/4 vibrate  hover:scale-105 transition-transform duration-300">
+                <div className="absolute -top-5 -left-5 w-full h-full hover:opacity-0 transition-all duration-300 bg-purple-300 rounded-xl opacity-10 blur-2xl"></div>
                 <img
                     src={img || "https://concise-studio.com/wp-content/webp-express/webp-images/themes/concise/assets/images/pages/services/ec-1.png.webp"}
                     alt={title}

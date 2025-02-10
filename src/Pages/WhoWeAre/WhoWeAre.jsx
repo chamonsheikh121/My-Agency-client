@@ -17,30 +17,31 @@ const AboutUs = () => {
             "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
         },
         {
-            "name": "MD Hasibul Hasan",
+            "name": "Hasibul Hasan",
             "position": "Managing Director (MD)",
             "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739123012/hasib_mbylcl.png"
         },
         {
-            "name": "Michael Brown",
+            "name": "Ruhul Amin",
             "position": "Project Manager",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739194737/Remove_background_project_3_asnrfw.png"
         },
         {
-            "name": "Emily Johnson",
+            "name": "Abdullah",
+            "position": "Full Stack Engineer",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739187495/Remove_basckground_project_fzlhcq.png"
+        },
+        {
+            "name": "Nahid",
             "position": "UI/UX Designer",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739189468/Remove_background_project_1_lz2eks.png"
         },
         {
-            "name": "David Wilson",
-            "position": "Frontend Developer",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
+            "name": "Parvej",
+            "position": "Full Stack Engineer",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739189617/Remove_background_project_2_odx4na.png"
         },
-        {
-            "name": "Sophia Martinez",
-            "position": "Backend Developer",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
-        }
+      
     ]
 
 
