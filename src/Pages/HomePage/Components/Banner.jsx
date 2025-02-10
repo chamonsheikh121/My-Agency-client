@@ -56,7 +56,7 @@ const Banner = ({ setIsOpen }) => {
                         </div>
                     </div>
 
-                    <div className='flex gap-10 flex-col md:flex-row md:items-center items-start justify-start'>
+                    <div className='flex gap-10 md:w-3/4 flex-col md:flex-row md:items-center items-start justify-start'>
                         <button
                             className={`bg-gradient-to-r w-full from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
         ${shake ? "vibrateHire" : ""}`}
