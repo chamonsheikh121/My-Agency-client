@@ -70,12 +70,13 @@ const MarqueSectionRight = () => {
 
 
     return (
-        <div className="rotate-2 w-[calc(100%-15px)]  ">
+        <div className="rotate-2 w-[calc(100%-15px)] ml-1  ">
             <Marquee
 
-                pauseOnHover
+                
                 gradient
                 gradientWidth={200}
+                speed={120}
                 direction="right"
                 
                 gradientColor="#ffffff"

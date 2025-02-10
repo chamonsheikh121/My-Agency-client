@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import bannerImg from './../../../assets/pexels-cottonbro-7438103.jpg'
 import TextAnimation from './TextAnimation';
 import { motion } from 'framer-motion';
+import VideoPlayer from '../../Components/VideoPlayer';
+import { MdSmartDisplay } from 'react-icons/md';
 
-const Banner = () => {
+const Banner = ({ setIsOpen }) => {
 
 
     const [shake, setShake] = useState(false);
+
 
     useEffect(() => {
         const toggleShake = () => {
@@ -53,12 +56,53 @@ const Banner = () => {
                         </div>
                     </div>
 
-                    <button
-                        className={`bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
+                    <div className='flex gap-10 flex-col md:flex-row md:items-center items-start justify-start'>
+                        <button
+                            className={`bg-gradient-to-r w-full from-purple-600 to-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all relative 
         ${shake ? "vibrateHire" : ""}`}
-                    >
-                         Hire Team Webio
-                    </button>
+                        >
+                            Hire Team Webio
+                        </button>
+
+                        <motion.button
+                            initial={{ "--x": "100%", scale: 1 }}
+                            animate={{ "--x": "-100%" }}
+                            whileTap={{ scale: 0.97 }}
+                            onClick={() => setIsOpen(true)}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                repeatDelay: 1,
+                                type: "spring",
+                                stiffness: 20,
+                                damping: 15,
+                                mass: 2,
+                                scale: {
+                                    type: "spring",
+                                    stiffness: 10,
+                                    damping: 5,
+                                    mass: 0.1,
+                                },
+                            }}
+                            className=" w-full rounded-md relative radial-gradient"
+                        >
+
+                            <button
+
+
+                                className="flex
+                                  h-full w-full  relative linear-mask
+                                items-center gap-2 px-6 py-[10px] border-[2px] hover:bg-purple-700 border-purple-700 text-purple-700 hover:text-white rounded-lg text-lg font-semibold shadow-lg transition-all   hover:border-purple-600"
+                            >
+                                <p> <MdSmartDisplay size={30} /></p>
+                                Watch Now
+                            </button>
+
+                            <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
+                        </motion.button>
+                    </div>
+
+
 
                     {/* Reviews Section */}
                     <div className="flex items-center space-x-4 pt-6">

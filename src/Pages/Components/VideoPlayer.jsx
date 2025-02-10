@@ -1,59 +1,18 @@
-import { useEffect, useState } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
-import 'aos/dist/aos.css'; // import AOS styles
-import AOS from 'aos'; // import AOS library
 
-const VideoPlayer = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const VideoPlayer = ({ isOpen, setIsOpen }) => {
+
     const videoSrc = "https://res.cloudinary.com/dcqfonnjc/video/upload/v1737349065/0new_gzozwk.mp4";
 
 
-    useEffect(() => {
-        // Initialize AOS with custom settings
-        AOS.init({
-            duration: 1000, // duration of the animation
-            easing: 'ease', // easing function
-            once: false, // whether animation should happen only once or every time it comes into view
-        });
-
-        // Refresh AOS after initialization
-        AOS.refresh(); // Force AOS to trigger again in case of any issues
-
-    }, []);
-
     return (
         <div
-            data-aos="fade-up"
-            data-aos-duration="3000"
-            className="flex items-center justify-center ">
-            {/* Video Thumbnail */}
-            <div
-                className={`${isOpen ? 'hidden' : 'block'} relative max-w-[1000px] w-[calc(100%-15px)] max-h-[700px]  cursor-pointer group`}
-                onClick={() => setIsOpen(true)}
-            >
-                {/* Video */}
-                <video src={videoSrc} className="w-full h-full object-cover rounded-lg" muted />
 
-                {/* Transparent Play Button */}
-                <div className="absolute inset-0 bg-black bg-opacity-10 flex items-center justify-center transition">
-                    <button
-                        className="p-4 bg-white rounded-full shadow-lg w-16 h-16 flex items-center justify-center"
-                        style={{
-                            WebkitMaskImage: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"black\"><path d=\"M8 5v14l11-7z\"/></svg>')",
-                            maskImage: "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"black\"><path d=\"M8 5v14l11-7z\"/></svg>')",
-                            WebkitMaskRepeat: "no-repeat",
-                            maskRepeat: "no-repeat",
-                            WebkitMaskPosition: "center",
-                            maskPosition: "center",
-                            backgroundColor: "white",
-                        }}
-                    >
-                        {/* Empty content, mask will create transparency */}
-                    </button>
-                </div>
-            </div>
+            className="flex items-center justify-center ">
+
 
 
             {/* Modal */}
@@ -63,7 +22,7 @@ const VideoPlayer = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+                        className="fixed inset-0 bg-black bg-opacity-50 flex     items-center justify-center z-50"
                         onClick={() => setIsOpen(false)}
                     >
                         <button

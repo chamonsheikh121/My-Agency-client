@@ -3,7 +3,6 @@ import Banner from "./Components/Banner";
 import Marquee from "react-fast-marquee";
 import Review from "./Components/Review";
 import AboutUs from "./Components/AboutUs";
-import WeHaveCompleted from "./Components/WeHaveCompleted";
 import Portfolio from "./Components/Portfolio";
 import MarqueSectionLeft from "./Components/MarqueSectionLeft";
 import MarqueSectionRight from "./Components/MarqueSectionRight";
@@ -13,8 +12,14 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { Helmet } from 'react-helmet';
 import VideoPlayer from '../Components/VideoPlayer';
+import { useState } from 'react';
 
 const HomePage = () => {
+
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    console.log(isOpen);
     const services = [
         { title: 'web development' },
         { title: 'web design' },
@@ -32,8 +37,15 @@ const HomePage = () => {
                 transition={{ duration: 1, ease: 'easeOut' }}
                 className="max-w-7xl mx-auto"
             >
-                <Banner />
+                <Banner setIsOpen={setIsOpen} />
             </motion.div>
+
+
+            {
+
+                isOpen && <VideoPlayer isOpen={isOpen} setIsOpen={setIsOpen} />
+
+            }
 
             <Helmet>
                 <title>Team Webio | HOME</title>
@@ -110,6 +122,7 @@ const HomePage = () => {
 
             </motion.div>
 
+            <VideoPlayer />
 
             {/* About Us Section with Animation */}
             <motion.div
@@ -118,13 +131,12 @@ const HomePage = () => {
                 transition={{ duration: 1, ease: 'easeOut' }}
                 className="max-w-7xl mx-auto"
             >
-                <AboutUs />
+                <AboutUs setIsOpen={setIsOpen} />
             </motion.div>
 
             {/* About Us Section with Animation */}
-          
-                <VideoPlayer />
-           
+
+
 
 
             {/* Marquee Sections with Different Animations */}

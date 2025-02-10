@@ -119,7 +119,7 @@ const AboutUs = () => {
 
                     </div>
                 </div>
-                <VideoPlayer/>
+              
 
                 <HireMessageSection/>
             </div>

@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import 'aos/dist/aos.css'; // import AOS styles
 import AOS from 'aos'; // import AOS library
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { MdSmartDisplay } from 'react-icons/md';
 
-const AboutUs = () => {
+const AboutUs = ({ setIsOpen }) => {
 
     useEffect(() => {
         // Initialize AOS with custom settings
@@ -71,17 +73,46 @@ const AboutUs = () => {
                     <p className="text-gray-500 mt-4 text-lg font-semibold">
                         With expertise spanning multiple industries, we craft <strong>powerful and innovative</strong> custom web solutions that enhance user experience, boost engagement, and optimize performance. Whether it’s an <strong>e-commerce store, SaaS platform, enterprise website,</strong> or a <strong>custom-coded solution</strong>, we leverage the latest technologies to turn your vision into reality with precision and excellence.
                     </p>
-                    <Link
-                    onClick={(e) => {
-                        e.preventDefault(); // Prevent React Router's default navigation
-                        window.location.href = '/who_we_are'; // Force a full reload
-                    }}
-                    to={'/who_we_are'}
+
+
+
+                    <motion.button
+                        initial={{ "--x": "100%", scale: 1 }}
+                        animate={{ "--x": "-100%" }}
+                        whileTap={{ scale: 0.97 }}
+                        onClick={() => setIsOpen(true)}
+                        transition={{
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            repeatDelay: 1,
+                            type: "spring",
+                            stiffness: 20,
+                            damping: 15,
+                            mass: 2,
+                            scale: {
+                                type: "spring",
+                                stiffness: 10,
+                                damping: 5,
+                                mass: 0.1,
+                            },
+                        }}
+                        className="mt-6 rounded-md relative radial-gradient"
                     >
-                        <button data-aos="zoom-in" className="mt-6 text-white bg-purple-600 hover:bg-gradient-to-t from-purple-500 to-purple-700 hover:shadow-xl font-semibold px-6 py-3 rounded-lg shadow-md transition">
+
+                        <button
+
+
+                            className="flex
+                                  h-full w-full  relative linear-mask
+                                items-center gap-2 px-6 py-[10px] border-[2px] hover:bg-purple-700 border-purple-700 text-purple-700 hover:text-white rounded-lg text-lg font-semibold shadow-lg transition-all   hover:border-purple-600"
+                        >
+                            <p> <MdSmartDisplay size={30} /></p>
                             Learn more
                         </button>
-                    </Link>
+
+                        <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
+                    </motion.button>
+
                 </div>
             </div>
         </section>
