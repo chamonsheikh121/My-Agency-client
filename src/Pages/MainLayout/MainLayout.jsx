@@ -115,23 +115,23 @@ const MainLayout = () => {
                   </svg>
                 </label>
                 <ul className="hidden lg:flex menu uppercase menu-horizontal text-lg font-medium transition-all duration-500">
-                  {navLinks.map(({ path, label }) => (
-                    <NavLink
+                    {navLinks.map(({ path, label }) => (
+                      <NavLink
 
-                      onClick={(e) => {
-                        e.preventDefault(); // Prevent React Router's default navigation
-                        window.location.href = path// Force a full reload
-                      }}
-                      key={path}
-                      to={path}
-                      className={({ isActive }) =>
-                        `relative p-2  backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
-                        ${isActive ? "text-purple-800 after:w-full font-extrabold" : "hover:text-gray-900"}`
-                      }
-                    >
-                      {label}
-                    </NavLink>
-                  ))}
+                        onClick={(e) => {
+                          e.preventDefault(); // Prevent React Router's default navigation
+                          window.location.href = path// Force a full reload
+                        }}
+                        key={path}
+                        to={path}
+                        className={({ isActive }) =>
+                          `relative p-2 shadow-xl backdrop-blur-md  mr-1 rounded-sm  text-nowrap text-sm text-gray-700 transition-all
+                          ${isActive ? "text-purple-800 after:w-full font-extrabold" : "hover:text-gray-900"}`
+                        }
+                      >
+                        {label}
+                      </NavLink>
+                    ))}
                 </ul>
               </div>
               <div className="flex-1 flex justify-center">
@@ -149,7 +149,12 @@ const MainLayout = () => {
 
                       to={'/'}
                     >
-                      <img className="w-full h-full object-cover " src={Logo} />
+                      <img
+    className="w-full h-full object-cover "
+    src={Logo}
+    alt="Logo"
+/>
+
                     </Link>
                   </div>
                 </div>

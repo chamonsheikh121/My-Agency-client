@@ -14,7 +14,7 @@ const AboutUs = () => {
         {
             "name": "Ali",
             "position": "Founder & CEO",
-            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739025424/Adobe_Express_-_file_1_ur9xiu.png"
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739258448/Remove_background_project_5_qy63tx.png"
         },
         {
             "name": "Hasibul Hasan",
@@ -25,6 +25,11 @@ const AboutUs = () => {
             "name": "Ruhul Amin",
             "position": "Project Manager",
             "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739194737/Remove_background_project_3_asnrfw.png"
+        },
+        {
+            "name": "Emon",
+            "position": "Senior Full Stack Engineer",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739257904/1_pubyif.png"
         },
         {
             "name": "Abdullah",
@@ -40,6 +45,17 @@ const AboutUs = () => {
             "name": "Parvej",
             "position": "Full Stack Engineer",
             "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739189617/Remove_background_project_2_odx4na.png"
+        },
+        {
+            "name": "Shakil",
+            "position": "Front End Expert",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739212206/Remove_background_project_4_xzd172.png"
+        },
+        
+        {
+            "name": "Rahul",
+            "position": "Back End Expert",
+            "img": "https://res.cloudinary.com/dcqfonnjc/image/upload/v1739257901/2_ptjzzt.png"
         },
       
     ]
